@@ -3,3 +3,4 @@
 //= require devise/jquery.bootstrap.wizard.js
 //= require devise/gsdk-bootstrap-wizard.js
 //= require devise/jquery.validate.min.js
+//= require jquery_ujs

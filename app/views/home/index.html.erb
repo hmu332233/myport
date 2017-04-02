@@ -1,7 +1,11 @@
 <% if user_signed_in? %>
-sdf
+
+  <p class="">1. <%= notice %></p>
+  <p class="">2. <%= alert %></p>
+
   <p>현재 로그인된 유저의 이메일 : <%= current_user.email %></p>
   <p>이름 : <%= current_user.name %></p>
+  <p>전공 : <%= current_user.major %></p>
   <p><%= link_to "로그아웃", destroy_user_session_path, method: :delete , data: { confirm: "로그아웃하시겠습니까?" } %></p>
 <% else %>
   <p><%= link_to "로그인", new_user_session_path %></p>

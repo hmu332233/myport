@@ -1,0 +1,49 @@
+@import 
+url(//fonts.googleapis.com/earlyaccess/hanna.css);
+@import 
+url(//fonts.googleapis.com/earlyaccess/nanumpenscript.css);
+
+.mainfont{
+  font-size: 25px;
+  font-family: 'Nanum Pen Script', serif;
+}
+.arrange_brand{
+  position: relative;
+  top: 10px;
+}
+.arrange_form_group{
+  position: relative;
+  top: 45px;
+}
+
+.arrange_signin_button{
+  position: relative;
+  bottom: 50px;
+}
+.arrange_signup_button{
+  position: relative;
+  bottom: 35px;
+}
+
+.logo-container{
+    left: 50px;
+    position: absolute;
+    top: 20px;
+     z-index: 3;
+}
+.logo-container .logo{
+    overflow: hidden;
+    border-radius: 50%;
+    border: 1px solid #333333;
+    width: 60px;
+    float: left;
+}
+.logo-container .brand{
+    font-size: 18px;
+    color: #FFFFFF;
+    line-height: 20px;
+    float: left;
+    margin-left: 10px;
+    margin-top: 10px;
+    width: 60px
+}

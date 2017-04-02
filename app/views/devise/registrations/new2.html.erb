@@ -1,11 +1,11 @@
-<div class="image-container set-full-height" style="background-image: url('/img/back2.jpeg')">
+<div class="image-container set-full-height" style="background-image: url('/img/wizard.jpg')">
 	<!--   Creative Tim Branding   -->
 	<a href="http://creative-tim.com">
 	<div class="logo-container">
 		<div class="logo">
 			<img src="/img/new_logo.png">
 		</div>
-		<div class="brand arrange_brand">
+		<div class="brand">
 			 myPORT
 		</div>
 	</div>
@@ -20,30 +20,31 @@
 						<!--<form action="" method="">-->
 						<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
 							<!--        You can switch ' data-color="orange" '  with one of the next bright colors: "blue", "green", "orange", "red"          -->
-							<div class="wizard-header mainfont">
+							<div class="wizard-header">
 								<h3>
 								<b>CREATE</b> YOUR ID <br>
 								<small>This information will let us know more about you.</small>
 								</h3>
 							</div>
-							<div class="wizard-navigation mainfont mainfont">
+							<div class="wizard-navigation">
 								<ul>
 									<li><a href="#sign" data-toggle="tab">1. 회원가입</a></li>
 									<li><a href="#basic" data-toggle="tab">2. 기본정보</a></li>
 									<li><a href="#detail" data-toggle="tab">3. 세부정보</a></li>
 								</ul>
 							</div>
-							<div class="tab-content mainfont">
+							<div class="tab-content">
 								<div class="tab-pane" id="sign">
 									<div class="row">
 										<div class="col-sm-12">
+											<%= devise_error_messages! %>
 											<h4 class="info-text"> Sign up </h4>
 										</div>
 										<div class="col-sm-8 col-sm-offset-2">
 											<div class="form-group">
 												<label>ID</label>
 												<!--<input type="text" class="form-control" placeholder="아이디">-->
-												<%= f.email_field :email, autofocus: true, class: "form-control", placeholder: "아이디"%>											
+												<%= f.email_field :email, autofocus: true, class: "form-control", placeholder: "아이디"%>
 											</div>
 										</div>
 										<div class="col-sm-8 col-sm-offset-2">
@@ -54,7 +55,6 @@
 											    <em>(<%= @minimum_password_length %> 자리 이상으로 만들어주세요. )</em>
 											    <% end %><br />
 											    <%= f.password_field :password, autocomplete: "off",class: "form-control", placeholder: "비밀번호" %>
-		
 											</div>
 										</div>
 										<div class="col-sm-8 col-sm-offset-2">
@@ -86,7 +86,7 @@
 											</div>
 											<div class="form-group">
 												<label>Last Name <small>(required)</small></label>
-												<!--<input name="lastname" type="text" class="form-control" placeholder="Smith...">-->
+												<input name="lastname" type="text" class="form-control" placeholder="Smith...">
 												<%= f.text_field :name,class: "form-control", placeholder: "이름" %>
 											</div>
 										</div>
@@ -108,7 +108,6 @@
 											<div class="form-group">
 												<label>학교</label>
 												<input type="text" class="form-control" placeholder="5h Avenue">
-												<%= f.text_field :school,class: "form-control", placeholder: "학교" %>
 											</div>
 										</div>
 										<div class="col-sm-3">
@@ -120,8 +119,7 @@
 										<div class="col-sm-5 col-sm-offset-1">
 											<div class="form-group">
 												<label>학과</label>
-												<!--<input type="text" class="form-control" placeholder="New York...">-->
-												<%= f.text_field :major,class: "form-control", placeholder: "학과" %>
+												<input type="text" class="form-control" placeholder="New York...">
 											</div>
 										</div>
 										<div class="col-sm-5">
@@ -146,14 +144,12 @@
 							</div>
 							<div class="wizard-footer height-wizard">
 								<div class="pull-right">
-									<input type='button' class='btn btn-next btn-fill btn-warning btn-wd btn-sm mainfont' name='next' value='Next'/>
-									<form action="/users/password" method="POST">
-										<!--<input type='button' class='btn btn-finish btn-fill btn-warning btn-wd btn-sm mainfont ' name='finish' value='Finish'/>-->
-										<%= f.submit "Finish", class: "btn btn-finish btn-fill btn-warning btn-wd btn-sm mainfont" %>
-									</form>
+									<input type='button' class='btn btn-next btn-fill btn-warning btn-wd btn-sm' name='next' value='Next'/>
+									<input type='button' class='btn btn-finish btn-fill btn-warning btn-wd btn-sm' name='finish' value='Finish'/>
+									<%= f.submit "Finish", class: "btn btn-finish btn-fill btn-warning btn-wd btn-sm" %>
 								</div>
 								<div class="pull-left">
-									<input type='button' class='btn btn-previous btn-fill btn-default btn-wd btn-sm mainfont' name='previous' value='Previous'/>
+									<input type='button' class='btn btn-previous btn-fill btn-default btn-wd btn-sm' name='previous' value='Previous'/>
 								</div>
 								<div class="clearfix">
 								</div>

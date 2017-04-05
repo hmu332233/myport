@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
   
+  get 'post/create'
+
+  get 'post/update'
+
+  get 'post/delete'
+
   root 'home#index'
 
   devise_for :users

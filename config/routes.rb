@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
   
-  get 'post/create'
+  get 'posts/create'
 
-  get 'post/update'
+  get 'posts/update'
 
-  get 'post/delete'
+  get 'posts/delete'
 
   root 'home#index'
 

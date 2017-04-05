@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class PostControllerTest < ActionController::TestCase
+class PostsControllerTest < ActionController::TestCase
   test "should get create" do
     get :create
     assert_response :success

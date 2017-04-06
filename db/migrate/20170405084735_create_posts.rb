@@ -5,6 +5,10 @@ class CreatePosts < ActiveRecord::Migration
       t.string :content
       t.string :user_name
       t.integer :scope
+      
+      #외래키
+      t.integer :user_id
+      t.integer :hash_tag_id
 
       t.timestamps null: false
     end

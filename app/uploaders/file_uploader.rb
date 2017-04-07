@@ -1,4 +1,6 @@
 class FileUploader < CarrierWave::Uploader::Base
+  
+  attr_reader :uploaded_filename
 
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
@@ -42,8 +44,9 @@ class FileUploader < CarrierWave::Uploader::Base
 
   # Override the filename of the uploaded files:
   # Avoid using model.id or version_name here, see uploader/store.rb for details.
-  # def filename
-  #   "something.jpg" if original_filename
-  # end
+  def filename
+    @uploaded_filename = Time.now.to_i.to_s + [*('A'..'Z')].sample(5).join + "." + file.extension if original_filename
+    return @uploaded_filename
+  end
 
 end

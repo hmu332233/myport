@@ -4,6 +4,9 @@ class CreateDownloadFiles < ActiveRecord::Migration
       t.integer :post_id
       t.string :url
       t.string :name
+      
+      #명세에 추가안된 부분
+      t.string :saved_name
 
       t.timestamps null: false
     end

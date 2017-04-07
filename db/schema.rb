@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 20170405085643) do
     t.integer  "post_id"
     t.string   "url"
     t.string   "name"
+    t.string   "saved_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

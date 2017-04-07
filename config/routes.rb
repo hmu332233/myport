@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   
   #post
+  get '/posts' => 'home#index'
   post '/posts' => 'posts#create'
   patch '/posts/:id' => 'posts#update'
   put '/posts/:id' => 'posts#update'

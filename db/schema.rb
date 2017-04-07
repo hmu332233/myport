@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 20170405085643) do
   create_table "download_files", force: :cascade do |t|
     t.integer  "post_id"
     t.string   "url"
+    t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

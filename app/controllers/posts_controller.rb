@@ -31,7 +31,6 @@ class PostsController < ApplicationController
     #post
     @post = Post.find(params[:id])
     @post.update(post_params)
-    puts @post
     
     #uploader
     post_file = params[:post][:file]

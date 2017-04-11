@@ -1,11 +1,14 @@
 class HomeController < ApplicationController
   
   #
-  before_action :authenticate_user!
+  # before_action :authenticate_user!
   
   def index
    @posts = current_user.posts
    puts @posts
+  end
+  
+  def index2
   end
   
   def create_post

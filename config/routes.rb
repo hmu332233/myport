@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  get '/my' => 'page#my'
+
   #post
   get '/posts' => 'home#index'
   post '/posts' => 'posts#create'

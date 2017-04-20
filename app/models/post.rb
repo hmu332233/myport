@@ -3,4 +3,5 @@ class Post < ActiveRecord::Base
     has_many :pictures
     has_many :download_files
     has_many :hash_tags
+    has_one :bookmark
 end

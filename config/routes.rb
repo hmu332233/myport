@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
   
+  #page
   get '/my' => 'page#my'
+  
+  #bookmark
+  post '/bookmarks' => 'bookmarks#create'
+  delete '/bookmarks' => 'bookmarks#delete'
 
   #post
   get '/posts' => 'home#index'

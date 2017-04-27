@@ -186,19 +186,27 @@ h1 .subtitle {
   line-height: 40px;
   margin: 15px 0 30px;
 }
+.tab-padding{
+  padding: 40px 0 0px;
+}
+
+.btn-padding{
+  padding: 20px 0 0px;
+}
 
 .card {
   background-color: #FFFFFF;
-  padding: 10px 0 20px;
+  padding: 10px 0 10px;
   width: 100%;
 }
+
 
 .wizard-card {
   min-height: 410px;
   background-color: #FFFFFF;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.15), 0 0 1px 1px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-  padding: 10px 0;
+  border-radius: 35px;
+  padding: 10px 0 0;
 }
 .wizard-card .picture-container {
   position: relative;
@@ -238,7 +246,7 @@ h1 .subtitle {
   padding: 20px 10px;
 }
 .wizard-card .wizard-footer {
-  padding: 0 10px;
+  padding: 0 68px;
 }
 .wizard-card .disabled {
   display: none;
@@ -307,20 +315,21 @@ h1 .subtitle {
   cursor: pointer;
   font-weight: 500;
 }
-.wizard-card[data-color="orange"] .choice:hover .icon, .wizard-card[data-color="orange"] .choice.active .icon {
-  border-color: #FF9500;
+
+.wizard-card[data-color="brown"] .choice:hover .icon, .wizard-card[data-color="brown"] .choice.active .icon {
+  border-color: #906D3B;
 }
-.wizard-card[data-color="orange"] .picture:hover {
-  border-color: #FF9500;
+.wizard-card[data-color="brown"] .picture:hover {
+  border-color: #906D3B;
 }
-.wizard-card[data-color="orange"] .moving-tab {
+.wizard-card[data-color="brown"] .moving-tab {
   position: absolute;
   text-align: center;
   padding: 10px;
   font-size: 12px;
   text-transform: uppercase;
   -webkit-font-smoothing: subpixel-antialiased;
-  background-color: #FF9500;
+  background-color: #906D3B;
   top: 0px;
   left: 0px;
   color: #FFFFFF;
@@ -654,12 +663,12 @@ h1 .subtitle {
   border-color: #05AE0E;
 }
 .btn-fill.btn-warning {
-  background-color: #FF9500;
-  border-color: #FF9500;
+  background-color: #AAAAAA;
+  border-color: #787878;
 }
 .btn-fill.btn-warning:hover, .btn-fill.btn-warning:focus, .btn-fill.btn-warning:active, .btn-fill.btn-warning.active, .open .dropdown-toggle .btn-fill.btn-warning {
-  background-color: #ED8D00;
-  border-color: #ED8D00;
+  background-color: #906D3B;
+  border-color: #787878;
 }
 .btn-fill.btn-danger {
   background-color: #FF3B30;

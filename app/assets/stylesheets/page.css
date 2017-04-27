@@ -8,4 +8,5 @@
  *= require page/lib/linecons/style.css
  *= require page/styles/style.min.css
  *= require page/theme-custom.css
+ *= requrie page/lib/tokenfield/bootstrap-tokenfield.min.css
  */

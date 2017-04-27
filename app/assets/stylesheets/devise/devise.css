@@ -1,10 +1,11 @@
+
 .arrange_brand{
   position: relative;
   top: 10px;
 }
 .arrange_btn{
   position: relative;
-  bottom: 50px;
+  float: left;
 }
 .logo-container{
     left: 50px;

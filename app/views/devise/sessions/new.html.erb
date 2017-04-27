@@ -62,8 +62,9 @@
 											<div class="wizard-footer height-wizard">
 												<div class="mButton gcenter">
 													<!--<a href="#none" class="btn btn-finish btn-fill btn-warning btn-wd btn-sm "><span>Sign in</span></a>-->
-													<%= f.submit "Sign in",class: "btn btn-finish btn-fill btn-warning btn-wd btn-sm " %>
-													<a href="/users/sign_up" class="btn btn-finish btn-fill btn-warning btn-wd btn-sm "><span>Sign up</span></a>
+													<%= f.submit "Sign in",class: "btn btn-finish btn-fill btn-warning btn-sm " %>
+													<!--<a href="/users/sign_up" class="btn btn-finish btn-fill btn-warning btn-wd btn-sm "><span>Sign up</span></a>-->
+													<input type="button" value="Sign up" onClick="location.href='/users/sign_up'" class="btn btn-finish btn-fill btn-warning btn-sm mainfont">
 												</div>
 												<div class="mButton gcenter btn-padding">
 													<center><a href="/users/password/new" class=""><span>Did you loss your ID?</span></a></center>

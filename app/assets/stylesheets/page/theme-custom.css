@@ -1,2 +1,99 @@
 @import url("styles/themes/theme-viki.min.css");
 .factory-flag{ visibility: hidden; }
+
+
+    
+    /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
+.icon_setting {
+  margin: 10px 0px;
+  text-align: right;
+  font-size: 40px;
+  color: #464646;
+}
+.navbar_content_title{
+  position: fixed;
+  float: left;
+  padding: 14px 70px;
+  font-size: 17px;
+  line-height: 21px;
+  height: 70px;
+
+}
+.navbar_content_days{
+  position: fixed;
+  float: left;
+  padding: 14px 70px;
+  font-size: 17px;
+  line-height: 21px;
+  height: 70px;
+}
+.navbar_content_upload{
+  position: fixed;
+  float: left;
+  padding: 13px 120px;
+  font-size: 15px;
+  line-height: 0px;
+  height: 60px;
+}
+.conponent_margin{
+  margin-left: 70px;
+}
+ps {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    background-color: #323232;
+    border-radius: 0.5em;
+    padding: 1px 1px;
+    font-size: 0.75em;
+}
+.checkbox_set{
+   width:13px;
+   height:13px;
+
+}
+#counter {
+  background:rgba(255,0,0,0.5);
+  border-radius: 0.5em;
+  padding: 0 .5em 0 .5em;
+  font-size: 0.75em;
+}
+#titlename, #titlecontent, #daysname, #dayscontent, #checkboxname, #fileuploadname{
+  float:left;
+  padding-top:10px;
+}
+#titlecontent{
+  position:relative;
+  margin-top:9px;
+  width:150px;
+  height:10px;
+  background-color:transparent;
+  border:0 solid black;
+  text-align:left;
+}
+#dayscontent{
+  position:relative;
+  margin-top:9px;
+  width:120px;
+  height:10px;
+  background-color:transparent;
+  border:0 solid black;
+  text-align:left;
+}
+#checkboxcontent{
+  width:200px;
+  float:left;
+  padding-left:10px;
+  padding-top:7px;
+}
+#fileuploadcontent{
+  float:left;
+}
+#post_content{
+  height:170px;
+  border:1;
+  overflow-y:hidden;
+  background:clear;
+}
+
+   

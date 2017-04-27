@@ -1,0 +1,82 @@
+<!-- BEGIN: Page content -->
+<!--<img alt class="bg" src="/images/placeholders/1920x1200-0.jpg"/><img alt class="bg" src="/images/placeholders/1920x1200-1.jpg"/>-->
+<section>
+<div class="view">
+	<div alt class="bg"></div>
+	<div class="content half-size colors-e background-60">
+		<div class="container">
+			<h2>Our <span class="highlight">Blog</span></h2>
+			<p class="title">
+				Skrollex <span class="highlight">Theme</span>
+			</p>
+		</div>
+	</div>
+</div>
+
+<div class="view">
+	<div class="content small-top-padding colors-e background-90-e">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-9">
+					<div class="row post">
+						<div class="col-md-3 post-meta">
+							<div class="post-day">
+								<%= @post.created_at.day %>
+							</div>
+							<div class="post-month">
+								<%= "#{@post.created_at.strftime('%B')} #{@post.created_at.year}" %>							
+							</div>
+						</div>
+						<div class="col-md-9">
+							<div class="post-body background-75-e">
+								<div class="post-image">
+									<a class="page-transition" href="blog-single-1.html">
+									    <img class="fluid-width" src="<%= @post.pictures.first.url %>" alt="Post with Featured Image">
+									</a>
+								</div>
+								<h3><a class="page-transition" href="blog-single-1.html"> <%= @post.title %> </a></h3>
+								<p>
+								    <%= @post.content %>
+								</p>
+								<p>
+									 At vero eos et accusamus et iusto odio dignissimos ducimus, qui blanditiis praesentium voluptatum deleniti atque corrupti, quos dolores et quas molestias excepturi sint, obcaecati cupiditate non provident, similique sunt in culpa, qui officia deserunt mollitia animi, id est laborum et dolorum fuga.
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 sidebar page-transition">
+					<div class="title">
+						Public Range
+					</div>
+					<ul>
+						<li><%= @scope %></li>
+					</ul>
+					<div class="title">
+						Uploaded File
+					</div>
+					<ul>
+					    <% @post.download_files.each_with_index do |file,i| %>
+                            <li><a href="<%= file.url %>"><%= "#{file.name}"%></a></li>
+                        <% end %>
+					</ul>
+					<div class="title">
+						Hash Tag
+					</div>
+					<ul class="tags-list">
+						<li><a href="blog.html">Design</a></li>
+						<li><a href="blog.html">Photography</a></li>
+						<li><a href="blog.html">Branding</a></li>
+						<li><a href="blog.html">Lifestyle</a></li>
+						<li><a href="blog.html">Video</a></li>
+						<li><a href="blog.html">Tours</a></li>
+						<li><a href="blog.html">Places</a></li>
+						<li><a href="blog.html">App</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</section>
+<!-- END: Page content -->

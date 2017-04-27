@@ -24,6 +24,17 @@ class PostsController < ApplicationController
     file.saved_name = uploader.uploaded_filename
     file.save
    
+   
+    #picture
+    post_picture = params[:post][:picture]
+    
+    uploader.store!(post_picture)
+    
+    picture = Picture.new
+    picture.url = uploader.url
+    picture.post_id = @post.id
+    picture.save
+   
   end
 
   def update
@@ -49,11 +60,42 @@ class PostsController < ApplicationController
     file.name = post_file.original_filename
     file.save
     
-    
   end
 
   def delete
     Post.delete(params[:id])
+  end
+  
+  def index
+    
+    @posts = current_user.posts
+    puts @posts.last.id
+    @post = Post.new
+    
+  end
+  
+  
+  def show
+    
+    @post = Post.find(params[:id])
+    puts @post.title
+    
+    case @post.scope
+    when 0
+      @scope = "개인 공개"
+    when 1
+      @scope = "전체 공개"
+    when 2
+      @scope = "멘토멘티 공개"
+    end
+    
+  end
+  
+  def edit
+    
+    @post = Post.find(params[:id])
+    puts @post.title
+    
   end
   
   def post_params

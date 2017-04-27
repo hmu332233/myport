@@ -8,7 +8,9 @@ Rails.application.routes.draw do
   delete '/bookmarks' => 'bookmarks#delete'
 
   #post
-  get '/posts' => 'home#index'
+  get '/posts' => 'posts#index'
+  get '/posts/:id' => 'posts#show'
+  get '/posts/:id/edit' => 'posts#edit'
   post '/posts' => 'posts#create'
   patch '/posts/:id' => 'posts#update'
   put '/posts/:id' => 'posts#update'

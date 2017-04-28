@@ -4,6 +4,8 @@ class PostsController < ApplicationController
   
   def create
     
+    puts params[:hash_tag]
+    
     #post
     @post = Post.new(post_params)
     @post.user_id = current_user.id

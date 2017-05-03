@@ -1,3 +1,4 @@
 class HashTag < ActiveRecord::Base
-    has_many :posts
+    has_many :post2tags
+    has_many :posts, :through => :post2tags
 end

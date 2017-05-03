@@ -1,296 +1,369 @@
 <section id="work">
 <div class="view">
-	<!--<img alt="" class="bg" src="images/placeholders/1920x1200-2.jpg" style="transform: translate3d(-739px, 155px, 0px) scale(1.32789, 1.32789); opacity: 1; transform-origin: left center 0px;"><img alt="" class="bg" src="images/placeholders/1920x1200-0.jpg" style="transform: translate3d(-739px, 155px, 0px) scale(1.27833, 1.27833); opacity: 0; transform-origin: left center 0px;">-->
-	<div class="content no-bottom-padding colors-e">
-		<div class="container">
-			<h2>Our <span class="highlight">Work</span></h2>
-			<p class="header-details">
-				<span class="highlight">Some Recent</span> Projects
-			</p>
-			<nav style="text-align:center" class="navbar navbar-light bg-faded">
-			<form class="form-inline">
-				<input class="form-control mr-sm-2" type="text" placeholder="Search">
-				<button type="button" onclick="doDisplay()">Search</button>
-			</form>
-			</nav>
-		</div>
-		<div class="gallery background-e" data-default-group="all" data-overlay=".gallery-overlay">
-		<!--<div class="gallery background-e" data-default-group="all" >-->
-			<div class="container-fluid">
-				<div class="filter">
-					<ul class="nav nav-pills text-center">
-						<li><a class="hover-effect active" data-group="all" href="#">All</a></li>
-						<li><a class="hover-effect" data-group="web" href="#">Web</a></li>
-						<li><a class="hover-effect" data-group="video" href="#">Video</a></li>
-						<li><a class="hover-effect" data-group="photography" href="#">Photography</a></li>
-						<li><a class="hover-effect" data-group="design" href="#">Design</a></li>
-					</ul>
-				</div>
-				<div class="row">
-					<div class="grid shuffle" style="position: relative; height: 1082px; transition: height 500ms ease-out;">
-						<div class="item col-md-3 col-sm-4 col-xs-6" data-groups='["design"]'>
-							<a href="#!portfolio-item-1.html" class="hover-overlay">
-							<img alt="Project 1" src="/images/placeholders/new_post.png"/>
-							<div class="overlay background-90-e">
-								<div class="hidden-xs">
-									<p class="title heading-e">
-										 새로운 게시물 포스팅
-									</p>
-									<p class="text-center heading-e">
-										<strong>포스팅 하시려면 클릭해주세요.</strong>
-									</p>
-									<p class="text-center">
-										<i class="li_lock"></i>
-									</p>
-								</div>
-							</div>
-							</a>
-						</div>
-						<!-- Trigger the modal with a button -->
-						<div class="item col-md-3 col-sm-4 col-xs-6 shuffle-item filtered on" data-groups="[&quot;photography&quot;, &quot;web&quot;, &quot;video&quot;]" style="position: absolute; top: 0px; left: 0px; visibility: visible; opacity: 1; transform: translate3d(325px, 42px, 0px) scale3d(1, 1, 1); transition: transform 500ms ease-out, opacity 500ms ease-out;">
-							<a class="hover-overlay" onclick="window.goPage();">
-							<img alt="Project 2" src="images/placeholders/500x400-2.jpg">
-							<div class="overlay background-90-e">
-								<div class="hidden-xs">
-									<p class="title heading-e">
-										 YouTube Video
-									</p>
-									<p class="text-center heading-e">
-										<strong>Excepteur sint lorem ipsum dolor sit amet consectetur.</strong>
-									</p>
-									<p class="text-center">
-										<i class="fa fa-youtube-square heading-e"></i>
-									</p>
-								</div>
-							</div>
-							</a>
-						</div>
-						<div class="item col-md-3 col-sm-4 col-xs-6 shuffle-item filtered on" data-groups="[&quot;photography&quot;, &quot;design&quot;]" style="position: absolute; top: 0px; left: 0px; visibility: visible; opacity: 1; transform: translate3d(651px, 42px, 0px) scale3d(1, 1, 1); transition: transform 500ms ease-out, opacity 500ms ease-out;">
-							<a href="#!portfolio-item-3.html" class="hover-overlay">
-							<img alt="Project 3" src="images/placeholders/500x400-0.jpg">
-							<div class="overlay background-90-e">
-								<div class="hidden-xs">
-									<p class="title heading-e">
-										 Slider
-									</p>
-									<p class="text-center heading-e">
-										<strong>Excepteur sint lorem ipsum dolor sit amet consectetur.</strong>
-									</p>
-									<p class="text-center">
-										<i class="fa fa-th heading-e"></i>
-									</p>
-								</div>
-							</div>
-							</a>
-						</div>
-						<div class="item col-md-3 col-sm-4 col-xs-6 shuffle-item filtered on" data-groups="[&quot;photography&quot;, &quot;web&quot;, &quot;video&quot;]" style="position: absolute; top: 0px; left: 0px; visibility: visible; opacity: 1; transform: translate3d(0px, 260px, 0px) scale3d(1, 1, 1); transition: transform 500ms ease-out, opacity 500ms ease-out;">
-							<a href="#!portfolio-item-4.html" class="hover-overlay">
-							<img alt="Project 4" src="images/placeholders/500x400-1.jpg">
-							<div class="overlay background-90-e">
-								<div class="hidden-xs">
-									<p class="title heading-e">
-										 Vimeo Video
-									</p>
-									<p class="text-center heading-e">
-										<strong>Excepteur sint lorem ipsum dolor sit amet consectetur.</strong>
-									</p>
-									<p class="text-center">
-										<i class="fa fa-vimeo-square heading-e"></i>
-									</p>
-								</div>
-							</div>
-							</a>
-						</div>
-						<div class="item col-md-3 col-sm-4 col-xs-6 shuffle-item filtered on" data-groups="[&quot;web&quot;, &quot;design&quot;]" style="position: absolute; top: 0px; left: 0px; visibility: visible; opacity: 1; transform: translate3d(651px, 822px, 0px) scale3d(1, 1, 1); transition: transform 500ms ease-out, opacity 500ms ease-out;">
-							<a href="#!portfolio-item-12.html" class="hover-overlay">
-							<img alt="Project 12" src="images/placeholders/500x400-0.jpg">
-							<div class="overlay background-90-e">
-								<div class="hidden-xs">
-									<p class="title heading-e">
-										 Slider
-									</p>
-									<p class="text-center heading-e">
-										<strong>Excepteur sint lorem ipsum dolor sit amet consectetur.</strong>
-									</p>
-									<p class="text-center">
-										<i class="fa fa-th heading-e"></i>
-									</p>
-								</div>
-							</div>
-							</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+   <!--<img alt="" class="bg" src="images/placeholders/1920x1200-2.jpg" style="transform: translate3d(-739px, 155px, 0px) scale(1.32789, 1.32789); opacity: 1; transform-origin: left center 0px;"><img alt="" class="bg" src="images/placeholders/1920x1200-0.jpg" style="transform: translate3d(-739px, 155px, 0px) scale(1.27833, 1.27833); opacity: 0; transform-origin: left center 0px;">-->
+   <div class="content no-bottom-padding colors-e">
+      <div class="container">
+         <h2>Our <span class="highlight">Work</span></h2>
+         <p class="header-details">
+            <span class="highlight">Some Recent</span> Projects
+         </p>
+         <nav style="text-align:center" class="navbar navbar-light bg-faded">
+         <form class="form-inline">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search">
+            <button type="button" class="search_submit" >Search</button>
+         </form>
+         </nav>
+      </div>
+      
+      <div class="row">
+         <div class="grid shuffle">
+            <div class="inner"></div>
+         </div>
+      </div>
+
+      <div class="gallery background-e" data-default-group="all" data-overlay=".gallery-overlay">
+      <!--<div class="gallery background-e" data-default-group="all" >-->
+         <div class="container-fluid">
+            <div class="filter">
+               <ul class="nav nav-pills text-center">
+                  <li><a class="hover-effect active" data-group="all" href="#">All</a></li>
+                  <li><a class="hover-effect" data-group="web" href="#">Web</a></li>
+                  <li><a class="hover-effect" data-group="video" href="#">Video</a></li>
+                  <li><a class="hover-effect" data-group="photography" href="#">Photography</a></li>
+                  <li><a class="hover-effect" data-group="design" href="#">Design</a></li>
+               </ul>
+            </div>
+            <div class="row">
+               <div class="grid shuffle" style="position: relative; height: 1082px; transition: height 500ms ease-out;">
+                  <div class="item col-md-3 col-sm-4 col-xs-6" data-groups='["design"]'>
+                     <a href="#!portfolio-item-1.html" class="hover-overlay">
+                     <img alt="Project 1" src="/images/placeholders/new_post.png"/>
+                     <div class="overlay background-90-e">
+                        <div class="hidden-xs">
+                           <p class="title heading-e">
+                               새로운 게시물 포스팅
+                           </p>
+                           <p class="text-center heading-e">
+                              <strong>포스팅 하시려면 클릭해주세요.</strong>
+                           </p>
+                           <p class="text-center">
+                              <i class="li_lock"></i>
+                           </p>
+                        </div>
+                     </div>
+                     </a>
+                  </div>
+                  <!-- Trigger the modal with a button -->
+                  <% @posts.reverse.each do |post| %>
+                     <div class="item col-md-3 col-sm-4 col-xs-6 shuffle-item filtered on" data-groups="['photograph', 'web', 'video']" style="position: absolute; top: 0px; left: 0px; visibility: visible; opacity: 1; transform: translate3d(325px, 42px, 0px) scale3d(1, 1, 1); transition: transform 500ms ease-out, opacity 500ms ease-out;">
+                        <a class="hover-overlay" onclick="location.href='/posts/<%=post.id%>';">
+                        <% if post.pictures.size > 0 %>
+                           <%= image_tag("#{post.pictures.first.url}", size: "500x100", alt: "entity") %>
+                           <!--<img alt="Project 2" src="/images/placeholders/500x400-0.jpg"/>-->
+                        <% else %>
+                           <%= image_tag("/images/placeholders/500x400-0.jpg", size: "500x400", alt: "Project") %>
+                           <!--<img alt="Project 2" src="/images/placeholders/new_post.png"/>-->
+                        <% end %>
+            
+                        <div class="overlay background-90-e">
+                           <div class="hidden-xs">
+                              <p class="icon_setting">
+                                 <i class="li_lock"></i>
+                                 <button type="button" style="border:0px" class="btn btn-default btn-lg" onclick="window.changeColor(<%= post.id %>);">
+                                 <span class="glyphicon glyphicon-star" aria-hidden="true" id="star<%= post.id %>"></span>
+                                 </button>
+                              </p>
+                              <p class="title heading-e">
+                                  <%= post.title %>
+                              </p>
+                              <p class="text-center heading-e">
+                                 <strong><%= post.updated_at %></strong>
+                              </p>
+                              <p class="text-center">
+                                 <i class="fa fa-youtube-square heading-e"></i>
+                              </p>
+                           </div>
+                        </div>
+                        </a>
+                     </div>
+                  <% end %>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
 </div>
 </section>
 
 <div class="overlay-window gallery-overlay colors-f background-95-f" id="first" data-overlay-zoom="#work .content">
-	<div class="overlay-control background-85-d">
-		<a class="previos" href="#"></a>
-		<a class="next" href="#"></a>
-		<a class="cross" href="#"></a>
-	</div>
-	<div class="overlay-view show-grid" id="first-posting">
-		<div class="col-md-11 col-md-offset-1" style="width:relative;">
-			<div class="col-md-6 col-md-offset-3 text-center">
-				<h3>게시물 등록</h3>
-			</div>
-			<%= form_for @post, url: {controller: "posts",action: "create"} do |f| %>
-			<!--<form>-->
-				<!--게시물 사진 시작-->
-				<div class="row">
-					<div class="col-md-6 text-center">
-						<h4>게시물 사진</h4>
-						<section id="wrapper">
-						<div id="carbonads-container">
-						</div>
-						<article>
-						<p id="status">
-							File API & FileReader API not supported
-						</p>
-						<p>
-							<input type='file'>
-							<%= f.file_field :picture %>
-						</p>
-						<div id="holder">
-						</div>
-						</article>
-						<script>
-	                              var upload = document.getElementsByTagName('input')[0],
-	                                  holder = document.getElementById('holder'),
-	                                  state = document.getElementById('status');
-	                              if (typeof window.FileReader === 'undefined') {
-	                                state.className = '실패';
-	                              } else {
-	                                state.className = 'success';
-	                                state.innerHTML = '이미지를 선택해주세요.';
-	                              }
-	                              upload.onchange = function (e) {
-	                                e.preventDefault();
-	                                var file = upload.files[0],
-	                                    reader = new FileReader();
-	                                reader.onload = function (event) {
-	                                  var img = new Image();
-	                                  img.src = event.target.result;
-	                                       if(img.width > 400){
-	                                          img.width = 400;
-	                                       }
-	                                       if(img.height >200){
-	                                          img.height =300;
-	                                       }
-	                                  // note: no onload required since we've got the dataurl...I think! :)
-	                                  holder.innerHTML = '';
-	                                  holder.appendChild(img);
-	                                };
-	                                reader.readAsDataURL(file);
-	                                return false;
-	                              };
-	                           </script>
-						</section>
-				
-					</div>
-					<!--게시물 사진 끝-->
-					<!--게시물 등록 날짜, 등록 파일 등등등 시작-->
-					<div class="col-md-5 text-center conponent_margin">
-						<section id="posting_details">
-						<h4>게시물 세부사항</h4>
-						<table class="table">
-						<tbody>
-						<tr>
-							<td>
-								<div id="titlename">
-									<h5>제목 :</h5>
-								</div>
-								<%= f.text_field(:title, id: "titlecontent") %>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<div id="daysname">
-									<h5>날짜 :</h5>
-								</div>
-								<input type="text" id="dayscontent">
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<div id="checkboxname">
-									<h5>공개범위 :</h5>
-								</div>
-								<div id="checkboxcontent">
-									<%= f.radio_button( :scope, '1', class: "checkbox_set", checked: true) %><span class="label label-default">전체</span>
-									<%= f.radio_button( :scope, '0', class: "checkbox_set") %><span class="label label-primary">나만</span>
-									<%= f.radio_button( :scope, '2', class: "checkbox_set") %><span class="label label-success">멘토만</span>
-									
-								</div>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<div id="fileuploadname">
-									<h4>파일업로드</h4>
-								</div>
-								<div id="fileuploadcontent">
-									<!--<input type="file" name="posting_file" style="border:0;">-->
-									<%= f.file_field( :file, style: "border:0;") %>
-								</div>
-							</td>
-						</tr>
-						</tbody>
-						</table>
-						</section>
-						<!--section 끝-->
-					</div>
-				</div>
-				<!--게시물 내용 시작-->
-				<div class="row">
-					<section id="posting_content">
-					<div class="col-md-6 text-center" style="margin-top:40px;">
-						<h4>게시물 내용</h4>
-						<div class="text-left">
-							<%= f.text_area( :content,id: "post_content") %>
-						</div>
-					</div>
-					</section>
-					<!--게시물 내용 끝-->
-					<!--사용된 해시태그 게시 시작-->
-					<div class="col-md-5 text-center conponent_margin" style="margin-top:40px;">
-						<section id="posting_hashtag">
-						<h4>해시태그 게시</h4>
-						<input type="text" class="form-control" id="tokenfield" value="test" name="hash_tag"/>
-						</section>
-					</div>
-				</div>
-				<!--사용된 해시태그 끝-->
-				<!--완료 버튼 시작-->
-				 <%= f.submit("확 인", class: "button background-b highlight-b") %>
-				<div class="row show-grid">
-					<div class="col-md-6 col-md-offset-3 text-center">
-						<div class="show-list slogan">
-							<div class="show-item text-center">
-								<!--<input type="button" href="#" class="button background-b highlight-b">-->
-								 <%= f.submit("확 인", class: "button background-b highlight-b") %>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!--완료 버튼 끝-->
-			<!--</form>-->
-			<% end %>
-		</div>
-	</div>
+   <div class="overlay-control background-85-d">
+      <a class="previos" href="#"></a>
+      <a class="next" href="#"></a>
+      <a class="cross" href="#"></a>
+   </div>
+   <div class="overlay-view show-grid" id="first-posting">
+      <div class="col-md-11 col-md-offset-1" style="width:relative;">
+         <div class="col-md-6 col-md-offset-3 text-center">
+            <h3>게시물 등록</h3>
+         </div>
+         <%= form_for @post, url: {controller: "posts",action: "create"} do |f| %>
+         <!--<form>-->
+            <!--게시물 사진 시작-->
+            <div class="row">
+               <div class="col-md-6 text-center">
+                  <h4>게시물 사진</h4>
+                  <section id="wrapper">
+                  <div id="carbonads-container">
+                  </div>
+                  <article>
+                  <p id="status">
+                     File API & FileReader API not supported
+                  </p>
+                  <p>
+                     <!--<input type='file'>-->
+                     <%= f.file_field :picture %>
+                  </p>
+                  <div id="holder">
+                  </div>
+                  </article>
+                  <script>
+                                 var upload = document.getElementsByTagName('input')[0],
+                                     holder = document.getElementById('holder'),
+                                     state = document.getElementById('status');
+                                 if (typeof window.FileReader === 'undefined') {
+                                   state.className = '실패';
+                                 } else {
+                                   state.className = 'success';
+                                   state.innerHTML = '이미지를 선택해주세요.';
+                                 }
+                                 upload.onchange = function (e) {
+                                   e.preventDefault();
+                                   var file = upload.files[0],
+                                       reader = new FileReader();
+                                   reader.onload = function (event) {
+                                     var img = new Image();
+                                     img.src = event.target.result;
+                                          if(img.width > 400){
+                                             img.width = 400;
+                                          }
+                                          if(img.height >200){
+                                             img.height =300;
+                                          }
+                                     // note: no onload required since we've got the dataurl...I think! :)
+                                     holder.innerHTML = '';
+                                     holder.appendChild(img);
+                                   };
+                                   reader.readAsDataURL(file);
+                                   return false;
+                                 };
+                              </script>
+                  </section>
+            
+               </div>
+               <!--게시물 사진 끝-->
+               <!--게시물 등록 날짜, 등록 파일 등등등 시작-->
+               <div class="col-md-5 text-center conponent_margin">
+                  <section id="posting_details">
+                  <h4>게시물 세부사항</h4>
+                  <table class="table">
+                  <tbody>
+                  <tr>
+                     <td>
+                        <div id="titlename">
+                           <h5>제목 :</h5>
+                        </div>
+                        <%= f.text_field(:title, id: "titlecontent") %>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>
+                        <div id="daysname">
+                           <h5>날짜 :</h5>
+                        </div>
+                        <input type="text" id="dayscontent">
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>
+                        <div id="checkboxname">
+                           <h5>공개범위 :</h5>
+                        </div>
+                        <div id="checkboxcontent">
+                           <%= f.radio_button( :scope, '1', class: "checkbox_set", checked: true) %><span class="label label-default">전체</span>
+                           <%= f.radio_button( :scope, '0', class: "checkbox_set") %><span class="label label-primary">나만</span>
+                           <%= f.radio_button( :scope, '2', class: "checkbox_set") %><span class="label label-success">멘토만</span>
+                           
+                        </div>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>
+                        <div id="fileuploadname">
+                           <h4>파일업로드</h4>
+                        </div>
+                        <div id="fileuploadcontent">
+                           <!--<input type="file" name="posting_file" style="border:0;">-->
+                           <%= f.file_field( :file, style: "border:0;") %>
+                        </div>
+                     </td>
+                  </tr>
+                  </tbody>
+                  </table>
+                  </section>
+                  <!--section 끝-->
+               </div>
+            </div>
+            <!--게시물 내용 시작-->
+            <div class="row">
+               <section id="posting_content">
+               <div class="col-md-6 text-center" style="margin-top:40px;">
+                  <h4>게시물 내용</h4>
+                  <div class="text-left">
+                     <%= f.text_area( :content,id: "post_content") %>
+                  </div>
+               </div>
+               </section>
+               <!--게시물 내용 끝-->
+               <!--사용된 해시태그 게시 시작-->
+               <div class="col-md-5 text-center conponent_margin" style="margin-top:40px;">
+                  <section id="posting_hashtag">
+                  <h4>해시태그 게시</h4>
+                  <input type="text" class="form-control" id="tokenfield" value="test" name="hash_tag"/>
+                  </section>
+               </div>
+            </div>
+            <!--사용된 해시태그 끝-->
+            <!--완료 버튼 시작-->
+             <%= f.submit("확 인", class: "button background-b highlight-b") %>
+            <div class="row show-grid">
+               <div class="col-md-6 col-md-offset-3 text-center">
+                  <div class="show-list slogan">
+                     <div class="show-item text-center">
+                        <!--<input type="button" href="#" class="button background-b highlight-b">-->
+                         <%= f.submit("확 인", class: "button background-b highlight-b") %>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <!--완료 버튼 끝-->
+         <!--</form>-->
+         <% end %>
+      </div>
+   </div>
 </div>
 
+<%= render 'shared/js' %>
 
-<script type="text/javascript">
-// 	$(function() {
-//         $('#content').keyup(function (e){
-//           var content = $(this).val();
-// 										          $(this).height(((content.split('\n').length + 1) * 1.5) + 'em');
-// 										      });
-// 										      $('#content').keyup();
-// 													});
- </script>
+<script>
+
+//인터넷 로딩이 다끝난뒤에만 안의 코드를 실행해야할때. 
+//ready 함수가 있는데 이렇게 줄여서 쓴다.
+$(function(){
+   
+  //comment_submit이 클릭이 되면 아래코드를 돌린다.
+  $(".search_submit").click(function(){
+    //내가 누른 submit 버튼이 this가 된다. 말그대로임
+    post_id_ = this.value;
+    content = $( "#content_" + post_id_ ).val()
+      
+      alert("seaching..");
+
+      $.ajax({
+      method: "GET",
+      url: "/posts/search/test",
+      dataType: 'json',
+      success: function(data){
+         
+         var aData = [];
+         for(var k in data){
+          aData.push(data[k].id, data[k].title, data[k].created_at);
+          alert(data[k][1])
+        }
+      
+          alert("success");
+          
+          for(var d in aData){
+   //          $(".inner").append("<div class=\"item col-md-3 col-sm-4 col-xs-6\" data-groups=\"[\'photograph\', \'web\', \'video\']\" style=\"position: absolute; top: 0px; left: 0px; visibility: visible; opacity: 1; transform: translate3d(325px, 42px, 0px) scale3d(1, 1, 1); transition: transform 500ms ease-out, opacity 500ms ease-out;\">"
+         // + "<a class=\"hover-overlay\" onclick=\"location.href=\'/posts/"+d[0]+"\';\">"
+         // + "<img alt=\"Project 2\" src=\"/images/placeholders/new_post.png\"/>"
+         // + "<div class=\"overlay background-90-e\">"
+         // + "<div class=\"hidden-xs\">"
+         // + "<p class=\"icon_setting\">"
+         // + "<i class=\"li_lock\"></i>"
+         // + "<button type=\"button\" style=\"border:0px\" class=\"btn btn-default btn-lg\" onclick=\"window.changeColor("+d[0]+");\">"
+         // + "<span class=\"glyphicon glyphicon-star\" aria-hidden=\"true\" id=\"star"+d[0]+"\"></span>"
+         // + "</button>"
+         // + "</p>"
+         // + "<p class=\"title heading-e\">"
+         // + d[1]
+         // + "</p>"
+         // + "<p class=\"text-center heading-e\">"
+         // + "<strong>"+d[2]+"</strong>"
+         // + "</p>"
+         // + "<p class=\"text-center\">"
+         // + "<i class=\"fa fa-youtube-square heading-e\"></i>"
+         // + "</p>"
+         // + "</div>"
+         // + "</div>"
+         // + "</a>"
+         // + "</div>"
+         // );
+   
+          $(".inner").append(
+             "<div class='item col-md-3 col-sm-4 col-xs-6' data-groups=\'[\"design\"]\'> <a href= \"#\" class= \"hover-overlay\">"
+             + "<img alt=\"Project 1\" src=\"/images/placeholders/500x400-0.jpg\"/><div class=\"overlay background-90-e\"><div class=\"hidden-xs\">"
+            + "<p class=\"title heading-e\">"
+            + d[1]
+            + "</p>"
+            + "<p class=\"text-center heading-e\">"
+            + "<strong>포스팅 하시려면 클릭해주세요.</strong>"
+            + "</p>"
+            + "<p class=\"text-center\">"
+            + "<i class=\"li_lock\"></i>"
+            + "</p>"
+            + "</div>"
+            + "</div>"
+            + "</a>"
+            + "</div>")
+         
+          }
+          
+          
+      },
+      error: function(){
+        alert("fail");
+      }
+      
+    });
+      
+      
+  });
+});
+
+</script>
+
+
+<script>
+   
+   $('#tokenfield').tokenfield();
+
+</script>
+
+
+<script>
+    function changeColor(id)
+      {
+            if(document.getElementById("star"+id).style.color != "yellow")
+            {
+                  document.getElementById("star"+id).style.color = "yellow";
+            }
+            else
+            {
+                  document.getElementById("star"+id).style.color = "black"
+            }
+            event.stopImmediatePropagation();
+          }
+          
+          
+</script>
+

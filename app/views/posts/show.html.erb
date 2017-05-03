@@ -64,14 +64,9 @@
 						Hash Tag
 					</div>
 					<ul class="tags-list">
-						<li><a href="blog.html">Design</a></li>
-						<li><a href="blog.html">Photography</a></li>
-						<li><a href="blog.html">Branding</a></li>
-						<li><a href="blog.html">Lifestyle</a></li>
-						<li><a href="blog.html">Video</a></li>
-						<li><a href="blog.html">Tours</a></li>
-						<li><a href="blog.html">Places</a></li>
-						<li><a href="blog.html">App</a></li>
+						<% @post.hash_tags.each do |hash_tag| %>
+							<li><a href="blog.html"><%= hash_tag.name %></a></li>
+						<% end %>
 					</ul>
 				</div>
 			</div>

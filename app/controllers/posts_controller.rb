@@ -4,13 +4,27 @@ class PostsController < ApplicationController
   
   def create
     
-    puts params[:hash_tag]
-    
     #post
     @post = Post.new(post_params)
     @post.user_id = current_user.id
     @post.user_name = current_user.name
     @post.save!
+    
+    #hash_tag
+    tags = params[:hash_tag].split(', ')
+    
+    tags.each do |tag|
+    
+    hash_tag = HashTag.new
+    hash_tag.name = tag
+    hash_tag.save
+    
+    @post.hash_tags << hash_tag
+    hash_tag.posts << @post
+    
+    end
+    
+    
     
     #uploader
     post_file = params[:post][:file]
@@ -71,7 +85,7 @@ class PostsController < ApplicationController
   def index
     
     @posts = current_user.posts
-    puts @posts.last.id
+
     @post = Post.new
     
   end

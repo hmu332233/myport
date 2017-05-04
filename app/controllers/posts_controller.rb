@@ -12,44 +12,51 @@ class PostsController < ApplicationController
     
     #hash_tag
     tags = params[:hash_tag].split(', ')
+    puts tags
     
     tags.each do |tag|
     
-    hash_tag = HashTag.new
-    hash_tag.name = tag
-    hash_tag.save
-    
-    @post.hash_tags << hash_tag
-    hash_tag.posts << @post
+      hash_tag = HashTag.find_or_create_by(name: tag)
+      hash_tag.name = tag
+      hash_tag.save
+      
+      @post.hash_tags << hash_tag
     
     end
     
-    
-    
     #uploader
     post_file = params[:post][:file]
-    
     uploader = FileUploader.new
-    uploader.store!(post_file)
-
-    #file
-    file = DownloadFile.new
-    file.url = uploader.url
-    file.post_id = @post.id
-    file.name = post_file.original_filename
-    file.saved_name = uploader.uploaded_filename
-    file.save
-   
-   
+    
+    
+    unless post_file.nil?
+      
+      uploader.store!(post_file)
+  
+      #file
+      file = DownloadFile.new
+      file.url = uploader.url
+      file.post_id = @post.id
+      file.name = post_file.original_filename
+      file.saved_name = uploader.uploaded_filename
+      file.save
+      
+    end
+  
     #picture
     post_picture = params[:post][:picture]
     
-    uploader.store!(post_picture)
+    unless post_picture.nil?
+      
+      uploader.store!(post_picture)
+      
+      picture = Picture.new
+      picture.url = uploader.url
+      picture.post_id = @post.id
+      picture.save
     
-    picture = Picture.new
-    picture.url = uploader.url
-    picture.post_id = @post.id
-    picture.save
+    end
+
    
   end
 

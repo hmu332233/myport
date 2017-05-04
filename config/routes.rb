@@ -15,7 +15,9 @@ Rails.application.routes.draw do
   patch '/posts/:id' => 'posts#update'
   put '/posts/:id' => 'posts#update'
   delete '/posts/:id' => 'posts#delete'
-  # resources 'posts'
+  
+  #search
+  get '/posts/search'
 
   root 'home#index'
   get 'home/create_post'

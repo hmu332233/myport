@@ -274,49 +274,16 @@ $(function(){
       dataType: 'json',
       success: function(data){
          
-         var aData = [];
          for(var k in data){
-          aData.push(data[k].id, data[k].title, data[k].created_at);
-          alert(data[k][1])
-        }
-      
-          alert("success");
-          
-          for(var d in aData){
-   //          $(".inner").append("<div class=\"item col-md-3 col-sm-4 col-xs-6\" data-groups=\"[\'photograph\', \'web\', \'video\']\" style=\"position: absolute; top: 0px; left: 0px; visibility: visible; opacity: 1; transform: translate3d(325px, 42px, 0px) scale3d(1, 1, 1); transition: transform 500ms ease-out, opacity 500ms ease-out;\">"
-         // + "<a class=\"hover-overlay\" onclick=\"location.href=\'/posts/"+d[0]+"\';\">"
-         // + "<img alt=\"Project 2\" src=\"/images/placeholders/new_post.png\"/>"
-         // + "<div class=\"overlay background-90-e\">"
-         // + "<div class=\"hidden-xs\">"
-         // + "<p class=\"icon_setting\">"
-         // + "<i class=\"li_lock\"></i>"
-         // + "<button type=\"button\" style=\"border:0px\" class=\"btn btn-default btn-lg\" onclick=\"window.changeColor("+d[0]+");\">"
-         // + "<span class=\"glyphicon glyphicon-star\" aria-hidden=\"true\" id=\"star"+d[0]+"\"></span>"
-         // + "</button>"
-         // + "</p>"
-         // + "<p class=\"title heading-e\">"
-         // + d[1]
-         // + "</p>"
-         // + "<p class=\"text-center heading-e\">"
-         // + "<strong>"+d[2]+"</strong>"
-         // + "</p>"
-         // + "<p class=\"text-center\">"
-         // + "<i class=\"fa fa-youtube-square heading-e\"></i>"
-         // + "</p>"
-         // + "</div>"
-         // + "</div>"
-         // + "</a>"
-         // + "</div>"
-         // );
-   
-          $(".inner").append(
+
+           $(".inner").append(
              "<div class='item col-md-3 col-sm-4 col-xs-6' data-groups=\'[\"design\"]\'> <a href= \"#\" class= \"hover-overlay\">"
              + "<img alt=\"Project 1\" src=\"/images/placeholders/500x400-0.jpg\"/><div class=\"overlay background-90-e\"><div class=\"hidden-xs\">"
             + "<p class=\"title heading-e\">"
-            + d[1]
+            + data[k].title
             + "</p>"
             + "<p class=\"text-center heading-e\">"
-            + "<strong>포스팅 하시려면 클릭해주세요.</strong>"
+            + "<strong>"+data[k].created_at+"</strong>"
             + "</p>"
             + "<p class=\"text-center\">"
             + "<i class=\"li_lock\"></i>"
@@ -324,10 +291,12 @@ $(function(){
             + "</div>"
             + "</div>"
             + "</a>"
-            + "</div>")
-         
-          }
+            + "</div>"
+            )
           
+        }
+      
+          alert("success");
           
       },
       error: function(){
@@ -335,6 +304,8 @@ $(function(){
       }
       
     });
+    
+ 
       
       
   });
@@ -366,4 +337,5 @@ $(function(){
           
           
 </script>
+
 

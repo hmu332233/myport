@@ -31,7 +31,9 @@
 							<div class="post-body background-75-e">
 								<div class="post-image">
 									<a class="page-transition" href="blog-single-1.html">
-									    <img class="fluid-width" src="<%= @post.pictures.first.url %>" alt="Post with Featured Image">
+										<% if @post.pictures.size > 0 %>
+										  <img class="fluid-width" src="<%= @post.pictures.first.url %>" alt="Post with Featured Image">
+										<% end %>
 									</a>
 								</div>
 								<h3><a class="page-transition" href="blog-single-1.html"> <%= @post.title %> </a></h3>

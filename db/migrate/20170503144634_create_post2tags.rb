@@ -4,6 +4,7 @@ class CreatePost2tags < ActiveRecord::Migration
       
       t.integer :post_id
       t.integer :hash_tag_id
+      t.integer :user_id
 
       t.timestamps null: false
     end

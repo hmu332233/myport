@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   delete '/posts/:id' => 'posts#delete'
   
   #search
-  get '/posts/search'
+  get '/posts/search/:word' => 'posts#search'
 
   root 'home#index'
   get 'home/create_post'

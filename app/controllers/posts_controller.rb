@@ -18,6 +18,7 @@ class PostsController < ApplicationController
     
       hash_tag = HashTag.find_or_create_by(name: tag)
       hash_tag.name = tag
+      hash_tag.user_id = current_user.id
       hash_tag.save
       
       @post.hash_tags << hash_tag
@@ -119,6 +120,22 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     puts @post.title
     
+  end
+  
+  def search
+  
+    word = params[:word]
+    
+    posts = []
+    
+    current_user.posts.each do |post|
+      unless post.hash_tags.find_by_name(word).nil?
+        posts << post
+      end
+    end
+  
+  
+    render json: posts.to_json
   end
   
   def post_params

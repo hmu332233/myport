@@ -18,10 +18,14 @@ class PostsController < ApplicationController
     
       hash_tag = HashTag.find_or_create_by(name: tag)
       hash_tag.name = tag
-      hash_tag.user_id = current_user.id
       hash_tag.save
       
       @post.hash_tags << hash_tag
+      
+      post2tag = @post.post2tags.last
+      post2tag.user_id = current_user.id
+      post2tag.save
+      
     
     end
     

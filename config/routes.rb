@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   
+  get 'search/index'
+  get 'search/search_users'
+  get 'search/search_posts'
+
   #page
   get '/my' => 'page#my'
   

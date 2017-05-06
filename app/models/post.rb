@@ -6,4 +6,9 @@ class Post < ActiveRecord::Base
     
     has_many :post2tags
     has_many :hash_tags, :through => :post2tags
+    
+    def self.find_by_tag_name(_user_id,tag_name)
+        
+    end
+    
 end

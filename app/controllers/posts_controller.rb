@@ -137,8 +137,7 @@ class PostsController < ApplicationController
         posts << post
       end
     end
-  
-  
+
     render json: posts.to_json
   end
   

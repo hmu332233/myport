@@ -8,7 +8,6 @@ class CreatePosts < ActiveRecord::Migration
       
       #외래키
       t.integer :user_id
-      t.integer :hash_tag_id
 
       t.timestamps null: false
     end

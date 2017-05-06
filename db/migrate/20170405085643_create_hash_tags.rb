@@ -4,9 +4,6 @@ class CreateHashTags < ActiveRecord::Migration
       
       t.string :name
       
-      #외래키
-      t.integer :post_id
-
       t.timestamps null: false
     end
   end

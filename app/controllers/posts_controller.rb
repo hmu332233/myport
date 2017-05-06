@@ -130,14 +130,8 @@ class PostsController < ApplicationController
   
     word = params[:word]
     
-    posts = []
+    posts = Post.find_by_tag_name_at_user_posts(current_user.id,word)
     
-    current_user.posts.each do |post|
-      unless post.hash_tags.find_by_name(word).nil?
-        posts << post
-      end
-    end
-
     render json: posts.to_json
   end
   

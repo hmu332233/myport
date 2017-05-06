@@ -7,9 +7,22 @@ class Post < ActiveRecord::Base
     has_many :post2tags
     has_many :hash_tags, :through => :post2tags
     
-    def self.find_by_tag_name(_user_id,tag_name)
+    def self.find_by_tag_name_at_all_posts(tag_name)
+        
+        posts = []
+        
+        Post.all.each do |post|
+          unless post.hash_tags.find_by_name(tag_name).nil?
+            posts << post
+          end
+        end
+        
+        return posts
+    end
+    
+    def self.find_by_tag_name_at_user_posts(_user_id, tag_name)
 
-        user = User.find(_user_id)
+        user = User.find(_user_id) 
         posts = []
         
         user.posts.each do |post|

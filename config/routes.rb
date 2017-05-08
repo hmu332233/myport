@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
   
-  get 'search/index'
-  get 'search/search_users'
-  get 'search/search_posts'
+  #search
+  get '/search' => 'search#index'
+  get '/search/users/:word' => 'search#search_users'
+  get '/search/posts/:word' => 'search#search_posts'
 
   #page
   get '/my' => 'page#my'

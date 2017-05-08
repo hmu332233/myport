@@ -124,7 +124,14 @@ class PostsController < ApplicationController
   def edit
     
     @post = Post.find(params[:id])
-    puts @post.title
+    # puts @post.title
+    
+    @tag_data = ""
+    
+    @post.hash_tags.each do |tag|
+      @tag_data += "#{tag.name},"
+    end
+    @tag_data.chop!
     
   end
   

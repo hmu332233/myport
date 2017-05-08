@@ -1,8 +1,172 @@
 <section id="contact">
 <div class="view">
-    asdf
-    asdfasdf
-    asdfasdf<br/><br/><br/><br/><br/><br/>
-	<input type="text" class="form-control" id="tokenfield" value="red,green,blue" />
+    
+<div class="colors-f background-95-f" id="first" data-overlay-zoom="#work .content">
+   <div class="overlay-control background-85-d">
+      <a class="previos" href="#"></a>
+      <a class="next" href="#"></a>
+      <a class="cross" href="#"></a>
+   </div>
+   <div class="overlay-view show-grid" id="first-posting">
+      <div class="col-md-11 col-md-offset-1" style="width:relative;">
+         <div class="col-md-6 col-md-offset-3 text-center">
+            <h3>게시물 등록</h3>
+         </div>
+         <%= form_for @post, url: {controller: "posts",action: "create"} do |f| %>
+         <!--<form>-->
+            <!--게시물 사진 시작-->
+            <div class="row">
+               <div class="col-md-6 text-center">
+                  <h4>게시물 사진</h4>
+                  <section id="wrapper">
+                  <div id="carbonads-container">
+                  </div>
+                  <article>
+                  <p id="status">
+                     File API & FileReader API not supported
+                  </p>
+                  <p>
+                     <!--<input type='file'>-->
+                     <%= f.file_field :picture %>
+                  </p>
+                  <div id="holder">
+                  </div>
+                  </article>
+                  <script>
+                                 var upload = document.getElementsByTagName('input')[0],
+                                     holder = document.getElementById('holder'),
+                                     state = document.getElementById('status');
+                                 if (typeof window.FileReader === 'undefined') {
+                                   state.className = '실패';
+                                 } else {
+                                   state.className = 'success';
+                                   state.innerHTML = '이미지를 선택해주세요.';
+                                 }
+                                 upload.onchange = function (e) {
+                                   e.preventDefault();
+                                   var file = upload.files[0],
+                                       reader = new FileReader();
+                                   reader.onload = function (event) {
+                                     var img = new Image();
+                                     img.src = event.target.result;
+                                          if(img.width > 400){
+                                             img.width = 400;
+                                          }
+                                          if(img.height >200){
+                                             img.height =300;
+                                          }
+                                     // note: no onload required since we've got the dataurl...I think! :)
+                                     holder.innerHTML = '';
+                                     holder.appendChild(img);
+                                   };
+                                   reader.readAsDataURL(file);
+                                   return false;
+                                 };
+                              </script>
+                  </section>
+            
+               </div>
+               <!--게시물 사진 끝-->
+               <!--게시물 등록 날짜, 등록 파일 등등등 시작-->
+               <div class="col-md-5 text-center conponent_margin">
+                  <section id="posting_details">
+                  <h4>게시물 세부사항</h4>
+                  <table class="table">
+                  <tbody>
+                  <tr>
+                     <td>
+                        <div id="titlename">
+                           <h5>제목 :</h5>
+                        </div>
+                        <%= f.text_field(:title, id: "titlecontent") %>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>
+                        <div id="daysname">
+                           <h5>날짜 :</h5>
+                        </div>
+                        <input type="text" id="dayscontent">
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>
+                        <div id="checkboxname">
+                           <h5>공개범위 :</h5>
+                        </div>
+                        <div id="checkboxcontent">
+                           <%= f.radio_button( :scope, '1', class: "checkbox_set", checked: true) %><span class="label label-default">전체</span>
+                           <%= f.radio_button( :scope, '0', class: "checkbox_set") %><span class="label label-primary">나만</span>
+                           <%= f.radio_button( :scope, '2', class: "checkbox_set") %><span class="label label-success">멘토만</span>
+                           
+                        </div>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>
+                        <div id="fileuploadname">
+                           <h4>파일업로드</h4>
+                        </div>
+                        <div id="fileuploadcontent">
+                           <!--<input type="file" name="posting_file" style="border:0;">-->
+                           <%= f.file_field( :file, style: "border:0;") %>
+                        </div>
+                     </td>
+                  </tr>
+                  </tbody>
+                  </table>
+                  </section>
+                  <!--section 끝-->
+               </div>
+            </div>
+            <!--게시물 내용 시작-->
+            <div class="row">
+               <section id="posting_content">
+               <div class="col-md-6 text-center" style="margin-top:40px;">
+                  <h4>게시물 내용</h4>
+                  <div class="text-left">
+                     <%= f.text_area( :content,id: "post_content") %>
+                  </div>
+               </div>
+               </section>
+               <!--게시물 내용 끝-->
+               <!--사용된 해시태그 게시 시작-->
+               <div class="col-md-5 text-center conponent_margin" style="margin-top:40px;">
+                  <section id="posting_hashtag">
+                  <h4>해시태그 게시</h4>
+                  <input type="text" class="form-control" id="tokenfield" value="<%= @tag_data %>" name="hash_tag"/>
+                  </section>
+               </div>
+            </div>
+            <!--사용된 해시태그 끝-->
+            <!--완료 버튼 시작-->
+             <%= f.submit("확 인", class: "button background-b highlight-b") %>
+            <div class="row show-grid">
+               <div class="col-md-6 col-md-offset-3 text-center">
+                  <div class="show-list slogan">
+                     <div class="show-item text-center">
+                        <!--<input type="button" href="#" class="button background-b highlight-b">-->
+                         <%= f.submit("확 인", class: "button background-b highlight-b") %>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <!--완료 버튼 끝-->
+         <!--</form>-->
+         <% end %>
+      </div>
+   </div>
+</div>
+
 </div>
 </section>
+
+
+<%= render 'shared/js' %>
+
+
+<script>
+   
+   $('#tokenfield').tokenfield();
+
+</script>

@@ -27,10 +27,9 @@
             <div class="filter">
                <ul class="nav nav-pills text-center">
                   <li><a class="hover-effect active" data-group="all" href="#">All</a></li>
-                  <li><a class="hover-effect" data-group="web" href="#">Web</a></li>
-                  <li><a class="hover-effect" data-group="video" href="#">Video</a></li>
-                  <li><a class="hover-effect" data-group="photography" href="#">Photography</a></li>
-                  <li><a class="hover-effect" data-group="design" href="#">Design</a></li>
+                  <% @hash_tags.each do |tag| %>
+                     <li><a class="hover-effect" data-group="<%= tag.name %>" href="#"><%= tag.name %></a></li>
+                  <% end %>
                </ul>
             </div>
             <div class="row">
@@ -55,7 +54,13 @@
                   </div>
                   <!-- Trigger the modal with a button -->
                   <% @posts.reverse.each do |post| %>
-                     <div class="item col-md-3 col-sm-4 col-xs-6 shuffle-item filtered on" data-groups='["photography","web"]' style="position: absolute; top: 0px; left: 0px; visibility: visible; opacity: 1; transform: translate3d(325px, 42px, 0px) scale3d(1, 1, 1); transition: transform 500ms ease-out, opacity 500ms ease-out;">
+                     <% tag_data = "" %>
+                     <% post.hash_tags.each do |tag| %>
+                        <% tag_data += "\"#{tag.name}\"," %>
+                     <% end %>
+                     <% tag_data.chop! %>
+                  
+                     <div class="item col-md-3 col-sm-4 col-xs-6 shuffle-item filtered on" data-groups='[<%= tag_data %>]' style="position: absolute; top: 0px; left: 0px; visibility: visible; opacity: 1; transform: translate3d(325px, 42px, 0px) scale3d(1, 1, 1); transition: transform 500ms ease-out, opacity 500ms ease-out;">
                         <a class="hover-overlay" onclick="location.href='/posts/<%=post.id%>';">
                         <% if post.pictures.size > 0 %>
                            <%= image_tag("#{post.pictures.first.url}", size: "500x100", alt: "entity") %>

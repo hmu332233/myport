@@ -100,6 +100,8 @@ class PostsController < ApplicationController
 
     @post = Post.new
     
+    @hash_tags = HashTag.find_favorite_tags(current_user.id,4)
+    
   end
   
   

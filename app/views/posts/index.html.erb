@@ -294,37 +294,21 @@ $(function(){
       dataType: 'json',
       success: function(data){
          
+         $('.search_item').remove();
+         
          for(var k in data){
-/*
-           $(".inner").append(
-             "<div class='item col-md-3 col-sm-4 col-xs-6' data-groups=\'[\"design\"]\'> <a href= \"#\" class= \"hover-overlay\">"
-            + "<img alt=\"Project 1\" src=\"/images/placeholders/500x400-0.jpg\"/><div class=\"overlay background-90-e\"><div class=\"hidden-xs\">"
-            + "<p class=\"title heading-e\">"
-            + data[k].title
-            + "</p>"
-            + "<p class=\"text-center heading-e\">"
-            + "<strong>"+data[k].created_at+"</strong>"
-            + "</p>"
-            + "<p class=\"text-center\">"
-            + "<i class=\"li_lock\"></i>"
-            + "</p>"
-            + "</div>"
-            + "</div>"
-            + "</a>"
-            + "</div>"
-            )*/
             
          $(".inner").append(
-             "<div class=\'item col-md-3 col-sm-4 col-xs-6\' data-groups=\'[\"design\"]\'>"
+             "<div class=\'search_item item col-md-3 col-sm-4 col-xs-6\' data-groups=\'[\"design\"]\'>"
             + "<div onclick=\"window.location.href=\'portfolio-item-1.html\';\" class= \"hover-overlay\">"
             + "<img alt=\"그림없다\" src=\"/images/placeholders/500x400-0.jpg\">"
             + "<div class=\"overlay background-90-e\">"
             + "<div class=\"hidden-xs\">"
             + "<p class=\"title heading-e\">"
-            + " 제목"
+            + data[k].title
             + "</p>"
             + "<p class=\"text-center heading-e\">"
-            + "<strong>Excepteur sint lorem ipsum dolor sit amet consectetur.</strong>"
+            + "<strong>"+data[k].created_at+"</strong>"
             + "</p>"
             + "</div>"
             + "</div>"

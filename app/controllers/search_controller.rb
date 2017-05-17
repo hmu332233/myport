@@ -1,5 +1,12 @@
 class SearchController < ApplicationController
+  
   def index
+    
+    word = params[:word]
+
+    @users = User.find_by_tag_name(word)
+    @posts = Post.find_by_tag_name_at_all_posts(word)
+    
   end
 
   # GET /search/posts/:word

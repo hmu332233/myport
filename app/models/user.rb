@@ -25,5 +25,9 @@ class User < ActiveRecord::Base
     
     return users
   end
+  
+  def favorite_tags
+    return HashTag.find_favorite_tags(id,5)
+  end
          
 end

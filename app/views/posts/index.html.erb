@@ -45,49 +45,14 @@
                            <p class="text-center heading-e">
                               <strong>포스팅 하시려면 클릭해주세요.</strong>
                            </p>
-                           <p class="text-center">
-                              <i class="li_lock"></i>
-                           </p>
+                   
                         </div>
                      </div>
                      </a>
                   </div>
                   
-                  <% @posts.reverse.each do |post| %>
-                     <% tag_data = "" %>
-                     <% post.hash_tags.each do |tag| %>
-                        <% tag_data += "\"#{tag.name}\"," %>
-                     <% end %>
-                     <% tag_data.chop! %>
-                 	<div class="item col-md-3 col-sm-4 col-xs-6" data-groups='[<%= tag_data %>]'>
-   						<div onclick="location.href='/posts/<%=post.id%>';" class="hover-overlay">
-   							<% if post.pictures.size > 0 %>
-                           <%= image_tag("#{post.pictures.first.url}", alt: "entity") %>
-                           <!--<img alt="Project 2" src="/images/placeholders/500x400-0.jpg"/>-->
-                        <% else %>
-                           <%= image_tag("/images/placeholders/500x400-0.jpg", alt: "Project") %>
-                           <!--<img alt="Project 2" src="/images/placeholders/new_post.png"/>-->
-                        <% end %>
-   							<div class="overlay background-90-e">
-   							   <p class="icon_setting">
-									<i class="material-icons" onclick="window.changeImg();" id="unlock">lock_open</i>
-
-								   <button type="button" style="border:0px" class="btn btn-default btn-lg" onclick="window.changeColor(<%= post.id %>);">
-                           <span class="glyphicon glyphicon-star" aria-hidden="true" id="star<%= post.id %>"></span>
-                           </button>
-
-								   </p>
-   								<div class="hidden-xs">
-   									<p class="title heading-e">
-                                  <%= post.title %>
-                              </p>
-                              <p class="text-center heading-e">
-                                 <strong><%= post.updated_at %></strong>
-                              </p>
-   								</div>
-   							</div>
-   						</div>
-   					</div>
+                  <% @posts.reverse.each do |post_d| %>
+                     <%= render partial: "shared/post", locals: {post: post_d}%>
    					<% end %>
                </div>
             </div>
@@ -264,7 +229,7 @@
 
       $(".inner").append(
              "<div class=\'item col-md-3 col-sm-4 col-xs-6\' data-groups=\'[\"design\"]\'>"
-            + "<div onclick=\"window.location.href=\'portfolio-item-1.html\';\" class= \"hover-overlay\">"
+            + "<div onclick=\"location.href='/posts/';\" class= \"hover-overlay\">"
             + "<img alt=\"그림없다\" src=\"images/placeholders/테스트용.jpg\">"
             + "<div class=\"overlay background-90-e\">"
             + "<div class=\"hidden-xs\">"
@@ -300,7 +265,7 @@ $(function(){
             
          $(".inner").append(
              "<div class=\'search_item item col-md-3 col-sm-4 col-xs-6\' data-groups=\'[\"design\"]\'>"
-            + "<div onclick=\"window.location.href=\'portfolio-item-1.html\';\" class= \"hover-overlay\">"
+            + "<div onclick=\"location.href='/posts/"+data[k].id+"';\" class= \"hover-overlay\">"
             + "<img alt=\"그림없다\" src=\"/images/placeholders/500x400-0.jpg\">"
             + "<div class=\"overlay background-90-e\">"
             + "<div class=\"hidden-xs\">"
@@ -358,3 +323,17 @@ $(function(){
 </script>
 
 
+<script> <!-- 자물쇠 아이콘 변경 -->
+		 function changeImg(unlock)
+		 {
+		     if($("#unlock").html() == "lock_open")
+		     {
+		         $("#unlock").html("lock_outline");
+		 }
+		  else
+		 {
+		      	 $("#unlock").html("lock_open");
+		 }
+		 event.stopImmediatePropagation();
+		 }
+</script>

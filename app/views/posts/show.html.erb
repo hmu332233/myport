@@ -38,10 +38,7 @@
 								</div>
 								<h3><a class="page-transition" href="blog-single-1.html"> <%= @post.title %> </a></h3>
 								<p>
-								    <%= @post.content %>
-								</p>
-								<p>
-									 At vero eos et accusamus et iusto odio dignissimos ducimus, qui blanditiis praesentium voluptatum deleniti atque corrupti, quos dolores et quas molestias excepturi sint, obcaecati cupiditate non provident, similique sunt in culpa, qui officia deserunt mollitia animi, id est laborum et dolorum fuga.
+								    <%= simple_format(@post.content) %>
 								</p>
 							</div>
 						</div>

@@ -1,2 +1,161 @@
-<h1>Search#index</h1>
-<p>Find me in app/views/search/index.html.erb</p>
+<section id="work">
+<div class="view">
+	<div class="content no-bottom-padding colors-e">
+		<div style="position:relative; top:15px;" class="container">
+			<table class="table">
+			<thead>
+			<tr>
+				<th>#</th>
+				<th>Name</th>
+				<th>Hash Tag</th>
+			</tr>
+			</thead>
+			<tbody>
+			<% @users.each_with_index do |user,i| %>
+			<tr class="active">
+				<td><%= i+1 %></td>
+				<td>
+					<a href="someone(dropdown).html"><%= user.name %></a>
+				</td>
+				<td>
+					 <% user.favorite_tags.each do |tag| %>
+					 	<a><%= "##{tag.name} " %></a>
+					 <% end %>
+				</td>
+			</tr>
+			<% end %>
+			</tbody>
+			</table>
+		</div>
+		<div class="gallery background-e" data-default-group="all" data-overlay=".gallery-overlay">
+			<div class="container-fluid">
+				<div class="filter">
+					<ul class="nav nav-pills text-center">
+						<li><a class="hover-effect" data-group="all" href="#">All</a></li>
+						<li><a class="hover-effect" data-group="web" href="#">Web</a></li>
+						<li><a class="hover-effect" data-group="video" href="#">Video</a></li>
+						<li><a class="hover-effect" data-group="photography" href="#">Photography</a></li>
+						<li><a class="hover-effect" data-group="design" href="#">Design</a></li>
+					</ul>
+				</div>
+				<div class="row">
+					<div class="grid">
+						<% @posts.reverse.each do |post_d| %>
+	                    	<%= render partial: "shared/post", locals: {post: post_d}%>
+	   					<% end %>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</section>
+
+
+<%= render 'shared/js' %>
+
+<script>
+
+    function postPlus()
+    {
+    
+
+      $(".inner").append(
+             "<div class=\'item col-md-3 col-sm-4 col-xs-6\' data-groups=\'[\"design\"]\'>"
+            + "<div onclick=\"location.href='/posts/';\" class= \"hover-overlay\">"
+            + "<img alt=\"그림없다\" src=\"images/placeholders/테스트용.jpg\">"
+            + "<div class=\"overlay background-90-e\">"
+            + "<div class=\"hidden-xs\">"
+            + "</div>"
+            + "</div>"
+            + "</div>"
+            + "</div>"
+          );
+    }
+
+
+//인터넷 로딩이 다끝난뒤에만 안의 코드를 실행해야할때. 
+//ready 함수가 있는데 이렇게 줄여서 쓴다.
+$(function(){
+   
+  //comment_submit이 클릭이 되면 아래코드를 돌린다.
+  $(".search_submit").click(function(){
+    //내가 누른 submit 버튼이 this가 된다. 말그대로임
+    post_id_ = this.value;
+    content = $( "#content_" + post_id_ ).val()
+      
+      alert("seaching..");
+
+      $.ajax({
+      method: "GET",
+      url: "/posts/search/test",
+      dataType: 'json',
+      success: function(data){
+         
+         $('.search_item').remove();
+         
+         for(var k in data){
+            
+         $(".inner").append(
+             "<div class=\'search_item item col-md-3 col-sm-4 col-xs-6\' data-groups=\'[\"design\"]\'>"
+            + "<div onclick=\"location.href='/posts/"+data[k].id+"';\" class= \"hover-overlay\">"
+            + "<img alt=\"그림없다\" src=\"/images/placeholders/500x400-0.jpg\">"
+            + "<div class=\"overlay background-90-e\">"
+            + "<div class=\"hidden-xs\">"
+            + "<p class=\"title heading-e\">"
+            + data[k].title
+            + "</p>"
+            + "<p class=\"text-center heading-e\">"
+            + "<strong>"+data[k].created_at+"</strong>"
+            + "</p>"
+            + "</div>"
+            + "</div>"
+            + "</div>"
+            + "</div>"
+          );
+            
+          
+        }
+      
+          alert("success");
+          
+      },
+      error: function(){
+        alert("fail");
+      }
+      
+    });
+  });
+});
+
+</script>
+
+
+<script>
+    function changeColor(id)
+      {
+            if(document.getElementById("star"+id).style.color != "yellow")
+            {
+                  document.getElementById("star"+id).style.color = "yellow";
+            }
+            else
+            {
+                  document.getElementById("star"+id).style.color = "black"
+            }
+            event.stopImmediatePropagation();
+          }
+</script>
+<script> <!-- 자물쇠 아이콘 변경 -->
+		 function changeImg(id)
+		 {
+		     if($("#unlock"+id).html() == "lock_open")
+		     {
+		         $("#unlock"+id).html("lock_outline");
+		 }
+		  else
+		 {
+		      	 $("#unlock"+id).html("lock_open");
+		 }
+		 event.stopImmediatePropagation();
+		 }
+</script>

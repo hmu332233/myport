@@ -62,7 +62,7 @@ class PostsController < ApplicationController
     
     end
 
-   
+    redirect_to "/posts"
   end
 
   def update
@@ -96,7 +96,13 @@ class PostsController < ApplicationController
   
   def index
     
-    @posts = current_user.posts
+    if params[:id].nil?
+      user = current_user
+    else
+      user = User.find(params[:id])
+    end
+    
+    @posts = user.posts
 
     @post = Post.new
     

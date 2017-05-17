@@ -1,4 +1,5 @@
 class PageController < ApplicationController
-  def my
+  def main
+    redirect_to "/users/#{current_user.id}"
   end
 end

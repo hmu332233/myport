@@ -1,0 +1,36 @@
+<% tag_data = "" %>
+<% post.hash_tags.each do |tag| %>
+<% tag_data += "\"#{tag.name}\"," %>
+<% end %>
+<% tag_data.chop! %>
+<div class="item col-md-3 col-sm-4 col-xs-6" data-groups='[<%= tag_data %>]'>
+    <div onclick="location.href='/posts/<%=post.id%>';" class="hover-overlay">
+   		<% if post.pictures.size > 0 %>
+           <%= image_tag("#{post.pictures.first.url}", alt: "entity") %>
+           <!--<img alt="Project 2" src="/images/placeholders/500x400-0.jpg"/>-->
+        <% else %>
+            <%= image_tag("/images/placeholders/500x400-0.jpg", alt: "Project") %>
+        <!--<img alt="Project 2" src="/images/placeholders/new_post.png"/>-->
+        <% end %>
+   		<div class="overlay background-90-e">
+   		<!--즐겨찾기, 공개범위 아이콘-->
+			<p class="icon_setting text-right">
+   		    	<button type="button" style="border:0px" class="btn btn-default btn-lg" onclick="window.changeImg();">
+   			    	<i class="material-icons" id="unlock">lock_open</i>
+   				</button>
+   				<button type="button" style="border:0px" class="btn btn-default btn-lg" onclick="window.changeColor(<%= post.id %>);">
+                    <span class="glyphicon glyphicon-star" aria-hidden="true" id="star<%= post.id %>"></span>
+                </button>
+   			</p>
+					
+   			<div class="hidden-xs">
+   				<p class="title heading-e">
+                    <%= post.title %>
+                </p>
+                <p class="text-center heading-e">
+                    <strong><%= post.updated_at %></strong>
+                </p>
+   			</div>
+   		</div>
+   	</div>
+</div>

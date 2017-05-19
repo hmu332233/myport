@@ -1,0 +1,38 @@
+<section id="work">
+<div class="view">
+	<div class="content no-bottom-padding colors-e">
+		<div class="container">
+			<h2>BookMark</h2>
+			<nav style="text-align:center" class="navbar navbar-light bg-faded">
+			<form class="form-inline">
+				<input class="form-control mr-sm-2" type="text" placeholder="Search">
+				<button type="button" onclick="">Search</button>
+			</form>
+			</nav>
+		</div>
+		<div class="gallery background-e" data-default-group="all" data-overlay=".gallery-overlay">
+			<div class="container-fluid">
+				<div class="filter">
+					<ul class="nav nav-pills text-center">
+						<li><a class="hover-effect" data-group="all" href="#">All</a></li>
+						<li><a class="hover-effect" data-group="web" href="#">Web</a></li>
+						<li><a class="hover-effect" data-group="video" href="#">Video</a></li>
+						<li><a class="hover-effect" data-group="photography" href="#">Photography</a></li>
+						<li><a class="hover-effect" data-group="design" href="#">Design</a></li>
+					</ul>
+				</div>
+				<div class="row">
+					<div class="grid">
+						<% @user.bookmarks.each do |bookmark| %>
+							<%= render partial: "shared/post", locals: {post: bookmark.post}%>
+						<% end %>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</section>
+
+<%= render 'shared/js' %>
+<%= render 'shared/post_js' %>

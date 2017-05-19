@@ -15,7 +15,7 @@
 			<tr class="active">
 				<td><%= i+1 %></td>
 				<td>
-					<a href="someone(dropdown).html"><%= user.name %></a>
+					<a href="/user/<%= user.id %>"><%= user.name %></a>
 				</td>
 				<td>
 					 <% user.favorite_tags.each do |tag| %>

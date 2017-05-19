@@ -3,10 +3,19 @@
    <!--<img alt="" class="bg" src="images/placeholders/1920x1200-2.jpg" style="transform: translate3d(-739px, 155px, 0px) scale(1.32789, 1.32789); opacity: 1; transform-origin: left center 0px;"><img alt="" class="bg" src="images/placeholders/1920x1200-0.jpg" style="transform: translate3d(-739px, 155px, 0px) scale(1.27833, 1.27833); opacity: 0; transform-origin: left center 0px;">-->
    <div class="content no-bottom-padding colors-e">
       <div class="container">
-         <h2>Our <span class="highlight">Work</span></h2>
-         <p class="header-details">
-            <span class="highlight">Some Recent</span> Projects
-         </p>
+         <h2><%= @user.name %></h2>
+         <!--<p class="header-details">-->
+         <!--   <span class="highlight">Some Recent</span> Projects-->
+         <!--</p>-->
+         <div class="dropdown" style="right:-750px; top:-65px;">
+         	<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+         	<span class="caret"></span>
+         	</button>
+         	<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+         		<li><a href="#">message</a></li>
+         		<li><a href="#">apply mentor</a></li>
+         	</ul>
+         </div>
          <nav style="text-align:center" class="navbar navbar-light bg-faded">
          <form class="form-inline">
             <input class="form-control mr-sm-2" type="text" placeholder="Search">
@@ -220,26 +229,10 @@
 </div>
 
 <%= render 'shared/js' %>
+<%= render 'shared/post_js' %>
+
 
 <script>
-
-    function postPlus()
-    {
-    
-
-      $(".inner").append(
-             "<div class=\'item col-md-3 col-sm-4 col-xs-6\' data-groups=\'[\"design\"]\'>"
-            + "<div onclick=\"location.href='/posts/';\" class= \"hover-overlay\">"
-            + "<img alt=\"그림없다\" src=\"images/placeholders/테스트용.jpg\">"
-            + "<div class=\"overlay background-90-e\">"
-            + "<div class=\"hidden-xs\">"
-            + "</div>"
-            + "</div>"
-            + "</div>"
-            + "</div>"
-          );
-    }
-
 
 //인터넷 로딩이 다끝난뒤에만 안의 코드를 실행해야할때. 
 //ready 함수가 있는데 이렇게 줄여서 쓴다.
@@ -298,42 +291,10 @@ $(function(){
 </script>
 
 
+
+
 <script>
    
    $('#tokenfield').tokenfield();
 
-</script>
-
-
-<script>
-    function changeColor(id)
-      {
-            if(document.getElementById("star"+id).style.color != "yellow")
-            {
-                  document.getElementById("star"+id).style.color = "yellow";
-            }
-            else
-            {
-                  document.getElementById("star"+id).style.color = "black"
-            }
-            event.stopImmediatePropagation();
-          }
-          
-          
-</script>
-
-
-<script> <!-- 자물쇠 아이콘 변경 -->
-		 function changeImg(unlock)
-		 {
-		     if($("#unlock").html() == "lock_open")
-		     {
-		         $("#unlock").html("lock_outline");
-		 }
-		  else
-		 {
-		      	 $("#unlock").html("lock_open");
-		 }
-		 event.stopImmediatePropagation();
-		 }
 </script>

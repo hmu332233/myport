@@ -9,17 +9,28 @@
            <%= image_tag("#{post.pictures.first.url}", alt: "entity") %>
            <!--<img alt="Project 2" src="/images/placeholders/500x400-0.jpg"/>-->
         <% else %>
-            <%= image_tag("/images/placeholders/500x400-0.jpg", alt: "Project") %>
+            <%= image_tag("/images/blank.png" ,alt: "Project") %>
         <!--<img alt="Project 2" src="/images/placeholders/new_post.png"/>-->
         <% end %>
    		<div class="overlay background-90-e">
    		<!--즐겨찾기, 공개범위 아이콘-->
 			<p class="icon_setting text-right">
-   		    	<button type="button" style="border:0px" class="btn btn-default btn-lg" onclick="window.changeImg();">
-   			    	<i class="material-icons" id="unlock">lock_open</i>
+   		    	<button type="button" style="border:0px" class="btn btn-default btn-lg" onclick="window.changeImg(<%= post.id %>);">
+   		    	    <% case post.scope %>
+   		    	    <% when 0 %>
+   		    	        <i class="material-icons" id="unlock<%= post.id %>">lock_outline</i>
+   		    	    <% when 1 %>
+   		    	        <i class="material-icons" id="unlock<%= post.id %>">lock_open</i>
+   		    	    <% when 2 %>
+   		    	        <i class="material-icons" id="unlock<%= post.id %>">lock_open</i>
+   		    	    <% end %>
    				</button>
    				<button type="button" style="border:0px" class="btn btn-default btn-lg" onclick="window.changeColor(<%= post.id %>);">
-                    <span class="glyphicon glyphicon-star" aria-hidden="true" id="star<%= post.id %>"></span>
+   				    <% if post.bookmark.nil? %>
+   				        <span class="glyphicon glyphicon-star" aria-hidden="true" id="star<%= post.id %>"></span>
+   				    <% else %>
+   				        <span class="glyphicon glyphicon-star" aria-hidden="true" id="star<%= post.id %>" style="color: yellow"></span>
+   				    <% end %>
                 </button>
    			</p>
 					

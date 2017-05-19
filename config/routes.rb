@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   
   root 'page#main'
+  # root 'home#index'
   
   #search
   get '/search' => 'search#index'
@@ -12,7 +13,8 @@ Rails.application.routes.draw do
   delete '/bookmarks' => 'bookmarks#delete'
 
   #posts
-  get '/users/:id' => 'posts#index'
+  get '/user/:id/bookmark' => 'posts#bookmark'
+  get '/user/:id' => 'posts#index'
   get '/posts/:id' => 'posts#show'
   get '/posts/:id/edit' => 'posts#edit'
   post '/posts' => 'posts#create'

@@ -62,7 +62,7 @@ class PostsController < ApplicationController
     
     end
 
-    redirect_to "/posts"
+    redirect_to "/user/#{current_user.id}"
   end
 
   def update
@@ -97,12 +97,12 @@ class PostsController < ApplicationController
   def index
     
     if params[:id].nil?
-      user = current_user
+      @user = current_user
     else
-      user = User.find(params[:id])
+      @user = User.find(params[:id])
     end
     
-    @posts = user.posts
+    @posts = @user.posts
 
     @post = Post.new
     
@@ -148,6 +148,12 @@ class PostsController < ApplicationController
     posts = Post.find_by_tag_name_at_user_posts(current_user.id,word)
     
     render json: posts.to_json
+  end
+  
+  def bookmark
+    
+    @user = User.find(params[:id])
+    
   end
   
   def post_params

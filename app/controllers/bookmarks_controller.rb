@@ -7,6 +7,7 @@ class BookmarksController < ApplicationController
     bookmark = Bookmark.new
     bookmark.user_id = current_user.id
     bookmark.post_id = params[:post_id]
+    bookmark.save
     
   end
 

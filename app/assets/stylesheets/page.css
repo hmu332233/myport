@@ -9,4 +9,5 @@
  *= require page/styles/style.min.css
  *= require page/theme-custom.css
  *= require page/lib/tokenfield/tokenfield.min.css
+ *= require page/bootstrap/dist/css/bootstrap-chattingroom.css
  */

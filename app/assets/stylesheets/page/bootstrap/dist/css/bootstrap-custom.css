@@ -1,9 +1,129 @@
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
+
+/*Business Card Css */
+.business-card {
+  border: 2px solid gray;
+  background: #f8f8f8;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+.profile-img {
+  height: 120px;
+  background: white;
+}
+.job {
+  color: #666666;
+  font-size: 17px;
+}
+.mail {
+  font-size: 16px;
+ }
+
+.icon_setting {
+  margin: 10px 0px;
+  text-align: right;
+  font-size: 40px;
+  color: #464646;
+}
+.navbar_content_title{
+  position: fixed;
+  float: left;
+  padding: 14px 70px;
+  font-size: 17px;
+  line-height: 21px;
+  height: 70px;
+
+}
+.navbar_content_days{
+  position: fixed;
+  float: left;
+  padding: 14px 70px;
+  font-size: 17px;
+  line-height: 21px;
+  height: 70px;
+}
+.navbar_content_upload{
+  position: fixed;
+  float: left;
+  padding: 13px 120px;
+  font-size: 15px;
+  line-height: 0px;
+  height: 60px;
+}
+.conponent_margin{
+  margin-left: 70px;
+}
+ps {
+    position: absolute;
+    bottom: 8px;
+    right: 16px;
+    background-color: #323232;
+    border-radius: 0.5em;
+    padding: 1px 1px;
+    font-size: 0.75em;
+}
+.checkbox_set{
+   width:13px;
+   height:13px;
+
+}
+#titlename, #titlecontent, #daysname, #dayscontent, #fileuploadname{
+  position: relative;
+  float:left;
+  padding-bottom: 5px;
+}
+#checkboxname{
+  position: relative;
+  float: left;
+  padding-bottom: 12px;
+}
+#titlecontent{
+  position:relative;
+  margin-top:5px;
+  width:330px;
+  height:50px;
+  font-size: 18px;
+  background-color:transparent;
+  border:0 solid black;
+  text-align:left;
+}
+#dayscontent{
+  position:relative;
+  margin-top:5px;
+  width:330px;
+  height:50px;
+  font-size: 18px;
+  background-color:transparent;
+  border:0 solid black;
+  text-align:left;
+}
+#checkboxcontent{
+  position: relative;
+  width:200px;
+  float:left;
+  padding-left:10px;
+  padding-top:20px;
+}
+#fileuploadcontent{
+  position: relative;
+  float:left;
+  padding-top: 11px;
+}
+
+#post_content{
+  height:200px;
+  border:1;
+  overflow-y:hidden;
+  background:clear;
+}
+
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
+
 body {
   margin: 0;
 }
@@ -1584,6 +1704,8 @@ pre code {
 .container-fluid {
   margin-right: auto;
   margin-left: auto;
+  margin-top: auto;
+  margin-bottom: auto;
   padding-left: 15px;
   padding-right: 15px;
 }
@@ -1597,8 +1719,15 @@ pre code {
   padding-left: 15px;
   padding-right: 15px;
 }
+.fix2{
+  max-height: 20px;
+}
 .col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12 {
   float: left;
+  max
+
+
+
 }
 .col-xs-12 {
   width: 100%;
@@ -1620,6 +1749,7 @@ pre code {
 }
 .col-xs-6 {
   width: 50%;
+
 }
 .col-xs-5 {
   width: 41.66666667%;
@@ -4915,7 +5045,7 @@ a.thumbnail.active {
 .alert {
   padding: 15px;
   margin-bottom: 21px;
-  border: 1px solid transparent;
+  /*border: 1px solid transparent;*/
   border-radius: 4px;
 }
 .alert h4 {
@@ -7159,7 +7289,7 @@ fieldset[disabled] .navbar-inverse .btn-link:hover,
   border-right-color: rgba(0, 0, 0, 0.6);
 }
 /**************************************************************************
-* Bootstrap State Colors 
+* Bootstrap State Colors
 **************************************************************************/
 .primary-color {
   color: #647a9c;

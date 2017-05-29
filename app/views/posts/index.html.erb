@@ -14,12 +14,14 @@
          	<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
          		<li><a href="#">message</a></li>
          		<li><a href="#">apply mentor</a></li>
+         		<li><a href="#">차단하기</a></li>
          	</ul>
          </div>
          <nav style="text-align:center" class="navbar navbar-light bg-faded">
          <form class="form-inline">
             <input class="form-control mr-sm-2" type="text" placeholder="Search">
             <button type="button" class="search_submit" >Search</button>
+            <%= link_to "로그아웃", "/users/sign_out",:method => "delete" %>
          </form>
          </nav>
       </div>

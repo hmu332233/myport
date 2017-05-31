@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
   
-  get 'blocks/create'
-
-  get 'blocks/delete'
+  post '/blocks' => 'blocks#create'
+  delete '/blocks' => 'blocks#delete' 
 
   root 'page#main'
   # root 'home#index'

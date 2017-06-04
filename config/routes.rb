@@ -3,7 +3,25 @@ Rails.application.routes.draw do
   get 'blocks/create'
 
   get 'blocks/delete'
+  
+  
+  
+  
+  
+  get 'home/board' => 'home#board'
+  get 'home/new_board' => 'home#new_board'
+ 
+  get 'home/create_board' => 'home#create_board' 
 
+  get 'home/:id' => 'home#show_board'
+  get '/home/:id/edit_board' => 'home#edit_board'
+  get 'home/:id/update_board' => 'home#update_board'
+  
+  get 'home/:id/delete_board' => 'home#delete_board'
+  
+  
+  
+  
   root 'page#main'
   # root 'home#index'
   

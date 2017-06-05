@@ -1,4 +1,8 @@
 class MentorsController < ApplicationController
+  
+  before_action :authenticate_user!
+
+  
   def index
   end
 
@@ -23,5 +27,9 @@ class MentorsController < ApplicationController
   end
   
   def management
+    
+    @mentor = current_user.mentor
+    @mentees = current_user.mentees
+    
   end
 end

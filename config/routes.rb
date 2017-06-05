@@ -1,5 +1,19 @@
 Rails.application.routes.draw do
   
+  get 'mentors/index'
+
+  get 'mentors/new'
+
+  get 'mentors/delete'
+
+  get 'mentors/show'
+
+  get 'mentors/edit'
+
+  get 'mentors/update'
+
+  get 'mentors/delete'
+
   post '/blocks' => 'blocks#create'
   delete '/blocks' => 'blocks#delete' 
 

@@ -21,4 +21,7 @@ class MentorsController < ApplicationController
 
   def delete
   end
+  
+  def management
+  end
 end

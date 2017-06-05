@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  get 'mentors/management'
   get 'mentors/index'
 
   get 'mentors/new'

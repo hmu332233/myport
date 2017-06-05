@@ -10,4 +10,6 @@
  *= require page/theme-custom.css
  *= require page/lib/tokenfield/tokenfield.min.css
  *= require page/bootstrap/dist/css/bootstrap-chattingroom.css
+ *= require page/bootstrap-menteelist.css
+ *= require page/bootstrap-mentor.css
  */

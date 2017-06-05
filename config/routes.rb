@@ -1,5 +1,14 @@
 Rails.application.routes.draw do
   
+  #mentor, mentee
+  post 'mentors/:mentor_id' => 'boards#create_mentor'
+  delete 'mentors/:mentor_id' => 'boards#delete_mentor'
+  post 'mentees/:mentee_id' => 'boards#create_mentee'
+  delete 'mentees/:mentee_id' => 'boards#delete_mentee'
+  
+  get 'boards/management'
+
+
   get 'mentors/management'
   get 'mentors/index'
 

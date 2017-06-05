@@ -91,6 +91,7 @@ ActiveRecord::Schema.define(version: 20170602174116) do
     t.string   "major"
     t.string   "school"
     t.string   "login_id"
+    t.integer  "mentor_user_id"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
   end

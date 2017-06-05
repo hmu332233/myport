@@ -35,6 +35,9 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.string     :major
       t.string     :school
       t.string     :login_id
+      
+      #외래키
+      t.integer    :mentor_user_id
 
       t.timestamps null: false
     end

@@ -2,6 +2,11 @@ class User < ActiveRecord::Base
   has_many :posts
   has_many :bookmarks
   has_many :blocks
+  
+  
+  belongs_to :mentor, :class_name => "User", :foreign_key => "mentor_user_id"
+  has_many :mentees, :class_name => "User", :foreign_key => "mentor_user_id"
+  
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,

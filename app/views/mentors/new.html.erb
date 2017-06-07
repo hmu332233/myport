@@ -1,2 +1,28 @@
-<h1>Mentors#new</h1>
-<p>Find me in app/views/mentors/new.html.erb</p>
+<section id="contact">
+<div class="view">
+   <!--<img alt="" class="bg" src="images/placeholders/1920x1200-2.jpg" style="transform: translate3d(-739px, 155px, 0px) scale(1.32789, 1.32789); opacity: 1; transform-origin: left center 0px;"><img alt="" class="bg" src="images/placeholders/1920x1200-0.jpg" style="transform: translate3d(-739px, 155px, 0px) scale(1.27833, 1.27833); opacity: 0; transform-origin: left center 0px;">-->
+   <div class="content no-bottom-padding colors-e">
+      <div class="container">
+   <form action="/mentors/create" method="get">
+  <div class="form-group">
+    <label for="exampleInputEmail1">제목</label>
+    <input type="text" class="form-control" name="title">
+  </div>
+  
+  <div class="form-group">
+    <label for="exampleInputPassword1">작성자</label>
+    <input type="text" class="form-control" name="writer">
+  </div>
+  
+  <div class="form-group">
+    <label for="exampleTextarea">내용</label>  
+    <textarea class="form-control" rows="3" name="content"></textarea>
+  </div>
+  
+  <button style="margin-top:10px;" type="submit" class="btn btn-default;">작성하기</button>
+  
+</form>
+    </div>
+    </div>
+</div>
+</div>

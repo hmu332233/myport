@@ -94,9 +94,16 @@
     		<a class="menu-toggle navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" href="#"><span></span></a>
     		<a class="navbar-brand" href="index.html">my<span class="highlight">PORT</span></a>
     	</div>
-    	<div class="navbar-header" id="topsearchbar">
-    		<input type="text" style="width:200px;margin-top:13px;margin-left:350px;height:20px;padding-bottom:15px;font-size:20px;" onkeypress="if(event.keyCode==13) {findperson()};" autofocus>
-    	</div>
+    	
+    	
+    	<form action="after_search.html" method="get">
+				<div class="navbar-header" id="topsearchbar">
+					<input placeholder="Search HashTag #" name="txtSend" type="text" style="width:200px;margin-top:13px;margin-left:350px;height:20px;padding-bottom:15px;font-size:20px;" autofocus>
+				</div>
+			</form>
+    	
+    	
+    	
     	<div class="navbar-header" id="topsearchbar_icon">
     		<i onclick="window.search();" class="fa fa-search" style="margin-left:-20px;margin-top:17.5px;" aria-hidden="true"></i>
     	</div>

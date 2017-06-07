@@ -2,22 +2,28 @@ Rails.application.routes.draw do
   
   get 'mentors/index'
 
+  get 'mentors/new' 
+  
+  get 'mentors/create' => 'mentors#create'
 
-  get 'mentors/new'
 
-  get 'mentors/delete'
+  get 'mentors/:id' => 'mentors#show'
+  get 'mentors/:id/commentcreate' => 'mentors#commentcreate'
+  
 
-  get 'mentors/show'
 
-  get 'mentors/edit'
+  get 'mentors/:id/edit' => 'mentors#edit'
 
-  get 'mentors/update'
+  get 'mentors/:id/update' => 'mentors#update'
 
-  get 'mentors/delete'
+  get 'mentors/:id/delete' => 'mentors#delete'
+  
+  # get 'mentors/:id/commentcreate' => 'mentors#commentcreate'
+  
+ 
 
   post '/blocks' => 'blocks#create'
   delete '/blocks' => 'blocks#delete' 
-
 
   root 'page#main'
   # root 'home#index'

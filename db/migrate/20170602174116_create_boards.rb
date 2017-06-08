@@ -7,6 +7,8 @@ class CreateBoards < ActiveRecord::Migration
       t.string :content
       t.integer :view
       
+      #외래키
+      t.integer :user_id
 
       t.timestamps null: false
     end

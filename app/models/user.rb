@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
   has_many :posts
   has_many :bookmarks
   has_many :blocks
+  has_many :boards
   
   
   belongs_to :mentor, :class_name => "User", :foreign_key => "mentor_user_id"

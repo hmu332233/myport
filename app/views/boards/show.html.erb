@@ -1,82 +1,75 @@
 <section id="contact">
 <div class="view">
-
-   <!--<img alt="" class="bg" src="images/placeholders/1920x1200-2.jpg" style="transform: translate3d(-739px, 155px, 0px) scale(1.32789, 1.32789); opacity: 1; transform-origin: left center 0px;"><img alt="" class="bg" src="images/placeholders/1920x1200-0.jpg" style="transform: translate3d(-739px, 155px, 0px) scale(1.27833, 1.27833); opacity: 0; transform-origin: left center 0px;">-->
-   <div class="content no-bottom-padding colors-e">
-      <div class="container">
-    						<div class="row">
-							<div class="col-md-9">
-								<div class="row post">
-									<div class="col-md-3 post-meta">
-										<div class="post-month"><%=@post.created_at%></div>										
-									</div>
-									<div class="col-md-9">
-										<div class="post-body background-75-e">
-										
-											<h3><%= @post.title%></h3>
-											<p>
-											    <%= @post.content%>
-											</p>
-											<div style="text-align:right;">
-											    <p><a href="/boards/<%=@post.id%>/edit">수정하기</a> <a href="/boards/<%=@post.id%>/delete">삭제하기</a> <a href="/boards/index">목록으로</a></p>
-
-											</div>
-											
-
-
-											<div id="comments">
-												<h6>댓글 수 : <%=@count%>개</h6>
-												
-												
-												
-												
-												
-												
-												<% @comments.each_with_index do |post,i| %>
-												<ol class="comment-list">
-													<li>
-														<div class="comment">
-															<div class="comment-box">
-																<div class="comment-author"> <a href="#"><%=post.replyname%></a> <%=post.created_at %></div>
-																<div class="comment-text">
-																	<p><%=post.replycontent%></p>
-																</div>
-															</div>
-														</div>
-						
-													</li>
-												</ol>
-												<%end%>
-												
-												
-												
-												
-												
-												<h4>Leave a Comment</h4>
-												<form class="comment-form" action="/boards/<%=@post.id%>/commentcreate" method="get" novalidate="novalidate">
-													<div class="row">
-														<div class="col-md-6 control-group">
-															<input type="text" name="replyname" value="" size="40" placeholder="Name" data-validation-required-message="Please fill the required field." required>
-															<div class="help-block"></div>
-														</div>
-
-														<div class="col-md-12 control-group">
-															<textarea name="replycontent" placeholder="Message" data-validation-required-message="Please fill the required field." required></textarea>
-															<div class="help-block"></div>
-														</div>
-														<div class="col-md-12 form-actions">
-															<input class="button" type="submit" value="Post Comment">
-														</div>
-													</div>
-												</form>
+	<!--<img alt="" class="bg" src="images/placeholders/1920x1200-2.jpg" style="transform: translate3d(-739px, 155px, 0px) scale(1.32789, 1.32789); opacity: 1; transform-origin: left center 0px;"><img alt="" class="bg" src="images/placeholders/1920x1200-0.jpg" style="transform: translate3d(-739px, 155px, 0px) scale(1.27833, 1.27833); opacity: 0; transform-origin: left center 0px;">-->
+	<div class="content no-bottom-padding colors-e">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-9">
+					<div class="row post">
+						<div class="col-md-3 post-meta">
+							<div class="post-month">
+								<%=@post.created_at%>
+							</div>
+						</div>
+						<div class="col-md-9">
+							<div class="post-body background-75-e">
+								<h3><%=@post.title%></h3>
+								<p>
+									<%=@post.content%>
+								</p>
+								<% if @isMine %>
+								<div style="text-align:right;">
+									<p>
+										<a href="/boards/<%=@post.id%>/edit">수정하기</a><a href="/boards/<%=@post.id%>/delete">삭제하기</a><a href="/boards/index">목록으로</a>
+									</p>
+								</div>
+								<% end %>
+								<div id="comments">
+									<h6>댓글 수 : <%=@count%>개</h6>
+									<% @comments.each_with_index do |post,i| %>
+									<ol class="comment-list">
+										<li>
+										<div class="comment">
+											<div class="comment-box">
+												<div class="comment-author">
+													<a href="#"><%=post.replyname%></a><%=post.created_at %>
+												</div>
+												<div class="comment-text">
+													<p>
+														<%=post.replycontent%>
+													</p>
+												</div>
 											</div>
 										</div>
-									</div>
+										</li>
+									</ol>
+									<%end%>
+									<h4>Leave a Comment</h4>
+									<form class="comment-form" action="/boards/<%=@post.id%>
+										/commentcreate" method="get" novalidate="novalidate">
+										<div class="row">
+											<div class="col-md-6 control-group">
+												<input type="text" name="replyname" value="" size="40" placeholder="Name" data-validation-required-message="Please fill the required field." required>
+												<div class="help-block">
+												</div>
+											</div>
+											<div class="col-md-12 control-group">
+												<textarea name="replycontent" placeholder="Message" data-validation-required-message="Please fill the required field." required></textarea>
+												<div class="help-block">
+												</div>
+											</div>
+											<div class="col-md-12 form-actions">
+												<input class="button" type="submit" value="Post Comment">
+											</div>
+										</div>
+									</form>
 								</div>
 							</div>
-
 						</div>
-    </div>
-    </div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
 </div>

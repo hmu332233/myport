@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20170605113531) do
     t.string   "writer"
     t.string   "content"
     t.integer  "view"
+    t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

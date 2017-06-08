@@ -15,7 +15,7 @@ class BoardsController < ApplicationController
     _content = params[:content]
     _writer = params[:writer]
     
-    Board.create(title: _title, writer: _writer, content: _content)
+    Board.create(title: _title, writer: _writer, content: _content,user_id: current_user.id)
     
     redirect_to '/boards/index'
   end
@@ -26,11 +26,13 @@ class BoardsController < ApplicationController
   def show
     id = params[:id]
     
-    
+  
     @post = Board.find(id)
     @comments = @post.comments.all.reverse
     @count = @comments.count
 
+
+    @isMine = true if @post.user_id == current_user.id
   end
 
   def edit

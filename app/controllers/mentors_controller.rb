@@ -1,82 +1,43 @@
 class MentorsController < ApplicationController
   
-  before_action :authenticate_user!
+  # POST /mentors/:mentor_id
+  def create_mentor
+    
+    mentor_id = params[:mentor_id]
+    
+    current_user.mentor = User.find(mentor_id)
+    
+    
+  end
 
+  #DELETE /mentors/:mentor_id
+  def delete_mentor
   
-  def index
-    @boards = Board.all.reverse
-  end
-
-  def new
-  end
+    mentor_id = params[:mentor_id]
+    
+    current_user.mentor = nil
   
-  def create
-    _title= params[:title]
-    _content = params[:content]
-    _writer = params[:writer]
-    
-    Board.create(title: _title, writer: _writer, content: _content)
-    
-    redirect_to '/mentors/index'
   end
 
-  def delete
-  end
-  
-  def show
-    id = params[:id]
+  #POST /mentees/:mentee_id
+  def create_mentee
     
+    mentee_id = params[:mentee_id]
     
-    @post = Board.find(id)
-    @comments = Comment.all.reverse
-    @count = Comment.count(:all)
-
-  end
-
-  def edit
-     _id = params[:id]
+    current_user.mentees << User.find(mentee_id)
     
-    @post = Board.find(_id)
   end
 
-  def update
-     _id = params[:id]
-     _title = params[:title]
-     _writer = params[:writer]
-     _content = params[:content]
-     
-     post = Board.find(_id)
-     
-     post.update(title: _title, writer: _writer, content: _content)
-     redirect_to '/mentors/index'
-  end
-
-
-  def delete
-      id = params[:id]
-      
-      post = Board.find(id)
-      post.delete
-      
-      redirect_to '/mentors/index'
-  end
-  
-  
-  def commentcreate
-    _id = params[:id]
-    _name = params[:replyname]
-    _content = params[:replycontent]
+  #DELETE /mentees/:mentee_id
+  def delete_mentee
     
-    Comment.create(replyname: _name, replycontent: _content)
+    mentee_id = params[:mentee_id]
     
-    redirect_to '/mentors/' + _id
-
+    User.find(mentee_id).mentor = nil
+    
   end
-  
+
   def management
-    
-    @mentor = current_user.mentor
-    @mentees = current_user.mentees
-    
   end
+  
 end

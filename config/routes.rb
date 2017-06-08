@@ -1,36 +1,21 @@
 Rails.application.routes.draw do
   
   #mentor, mentee
-  post 'mentors/:mentor_id' => 'boards#create_mentor'
-  delete 'mentors/:mentor_id' => 'boards#delete_mentor'
-  post 'mentees/:mentee_id' => 'boards#create_mentee'
-  delete 'mentees/:mentee_id' => 'boards#delete_mentee'
+  post 'mentors/:mentor_id' => 'mentors#create_mentor'
+  delete 'mentors/:mentor_id' => 'mentors#delete_mentor'
+  post 'mentees/:mentee_id' => 'mentors#create_mentee'
+  delete 'mentees/:mentee_id' => 'mentors#delete_mentee'
   
   get 'boards/management'
+  get 'boards/index'
+  get 'boards/new' 
+  get 'boards/create' => 'boards#create'
+  get 'boards/:id' => 'boards#show'
+  get 'boards/:id/commentcreate' => 'boards#commentcreate'
+  get 'boards/:id/edit' => 'boards#edit'
+  get 'boards/:id/update' => 'boards#update'
+  get 'boards/:id/delete' => 'boards#delete'
 
-
-  get 'mentors/management'
-  get 'mentors/index'
-
-  get 'mentors/new' 
-  
-  get 'mentors/create' => 'mentors#create'
-
-
-  get 'mentors/:id' => 'mentors#show'
-  get 'mentors/:id/commentcreate' => 'mentors#commentcreate'
-  
-
-
-  get 'mentors/:id/edit' => 'mentors#edit'
-
-  get 'mentors/:id/update' => 'mentors#update'
-
-  get 'mentors/:id/delete' => 'mentors#delete'
-  
-  # get 'mentors/:id/commentcreate' => 'mentors#commentcreate'
-  
- 
 
   post '/blocks' => 'blocks#create'
   delete '/blocks' => 'blocks#delete' 

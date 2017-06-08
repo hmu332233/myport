@@ -18,7 +18,7 @@
 											    <%= @post.content%>
 											</p>
 											<div style="text-align:right;">
-											    <p><a href="/mentors/<%=@post.id%>/edit">수정하기</a> <a href="/mentors/<%=@post.id%>/delete">삭제하기</a> <a href="/mentors/index">목록으로</a></p>
+											    <p><a href="/boards/<%=@post.id%>/edit">수정하기</a> <a href="/boards/<%=@post.id%>/delete">삭제하기</a> <a href="/boards/index">목록으로</a></p>
 
 											</div>
 											
@@ -53,7 +53,7 @@
 												
 												
 												<h4>Leave a Comment</h4>
-												<form class="comment-form" action="/mentors/<%=@post.id%>/commentcreate" method="get" novalidate="novalidate">
+												<form class="comment-form" action="/boards/<%=@post.id%>/commentcreate" method="get" novalidate="novalidate">
 													<div class="row">
 														<div class="col-md-6 control-group">
 															<input type="text" name="replyname" value="" size="40" placeholder="Name" data-validation-required-message="Please fill the required field." required>

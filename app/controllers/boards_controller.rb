@@ -1,42 +1,83 @@
 class BoardsController < ApplicationController
+
+  before_action :authenticate_user!
+
   
-  # POST /mentors/:mentor_id
-  def create_mentor
-    
-    mentor_id = params[:mentor_id]
-    
-    current_user.mentor = User.find(mentor_id)
-    
-    
+  def index
+    @boards = Board.all.reverse
   end
 
-  #DELETE /mentors/:mentor_id
-  def delete_mentor
+  def new
+  end
   
-    mentor_id = params[:mentor_id]
+  def create
+    _title= params[:title]
+    _content = params[:content]
+    _writer = params[:writer]
     
-    current_user.mentor = nil
+    Board.create(title: _title, writer: _writer, content: _content)
+    
+    redirect_to '/boards/index'
+  end
+
+  def delete
+  end
   
+  def show
+    id = params[:id]
+    
+    
+    @post = Board.find(id)
+    @comments = Comment.all.reverse
+    @count = Comment.count(:all)
+
   end
 
-  #POST /mentees/:mentee_id
-  def create_mentee
+  def edit
+     _id = params[:id]
     
-    mentee_id = params[:mentee_id]
-    
-    current_user.mentees << User.find(mentee_id)
-    
+    @post = Board.find(_id)
   end
 
-  #DELETE /mentees/:mentee_id
-  def delete_mentee
-    
-    mentee_id = params[:mentee_id]
-    
-    User.find(mentee_id).mentor = nil
-    
+  def update
+     _id = params[:id]
+     _title = params[:title]
+     _writer = params[:writer]
+     _content = params[:content]
+     
+     post = Board.find(_id)
+     
+     post.update(title: _title, writer: _writer, content: _content)
+     redirect_to '/boards/index'
   end
 
+
+  def delete
+      id = params[:id]
+      
+      post = Board.find(id)
+      post.delete
+      
+      redirect_to '/boards/index'
+  end
+  
+  
+  def commentcreate
+    _id = params[:id]
+    _name = params[:replyname]
+    _content = params[:replycontent]
+    
+    Comment.create(replyname: _name, replycontent: _content)
+    
+    redirect_to '/boards/' + _id
+
+  end
+  
   def management
+    
+    @mentor = current_user.mentor
+    @mentees = current_user.mentees
+    
   end
+  
 end

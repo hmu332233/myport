@@ -8,6 +8,7 @@ class BoardsController < ApplicationController
   end
 
   def new
+    @writer = current_user.name
   end
   
   def create
@@ -66,7 +67,7 @@ class BoardsController < ApplicationController
   
   def commentcreate
     _id = params[:id]
-    _name = params[:replyname]
+    _name = current_user.name
     _content = params[:replycontent]
     
     Comment.create(replyname: _name, replycontent: _content,board_id: _id)

@@ -26,8 +26,9 @@
 								<% end %>
 								<div id="comments">
 									<h6>댓글 수 : <%=@count%>개</h6>
-									<% @comments.each_with_index do |post,i| %>
+									
 									<ol class="comment-list">
+										<% @comments.each_with_index do |post,i| %>
 										<li>
 										<div class="comment">
 											<div class="comment-box">
@@ -42,22 +43,23 @@
 											</div>
 										</div>
 										</li>
+										<%end%>
 									</ol>
-									<%end%>
+									
 									<h4>Leave a Comment</h4>
 									<form class="comment-form" action="/boards/<%=@post.id%>
 										/commentcreate" method="get" novalidate="novalidate">
 										<div class="row">
-											<div class="col-md-6 control-group">
-												<input type="text" name="replyname" value="" size="40" placeholder="Name" data-validation-required-message="Please fill the required field." required>
-												<div class="help-block">
-												</div>
-											</div>
 											<div class="col-md-12 control-group">
-												<textarea name="replycontent" placeholder="Message" data-validation-required-message="Please fill the required field." required></textarea>
+												<input type="text" name="replycontent" value="" size="40" placeholder="Message" data-validation-required-message="Please fill the required field." required>
 												<div class="help-block">
 												</div>
 											</div>
+											<!--<div class="col-md-12 control-group">-->
+											<!--	<textarea name="replycontent" placeholder="Message" data-validation-required-message="Please fill the required field." required></textarea>-->
+											<!--	<div class="help-block">-->
+											<!--	</div>-->
+											<!--</div>-->
 											<div class="col-md-12 form-actions">
 												<input class="button" type="submit" value="Post Comment">
 											</div>

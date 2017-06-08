@@ -1,13 +1,51 @@
 <section id="contact">
 <div class="view">
-
-   <!--<img alt="" class="bg" src="images/placeholders/1920x1200-2.jpg" style="transform: translate3d(-739px, 155px, 0px) scale(1.32789, 1.32789); opacity: 1; transform-origin: left center 0px;"><img alt="" class="bg" src="images/placeholders/1920x1200-0.jpg" style="transform: translate3d(-739px, 155px, 0px) scale(1.27833, 1.27833); opacity: 0; transform-origin: left center 0px;">-->
-   <div class="content no-bottom-padding colors-e">
-      <div class="container">
-    asdf
-    asdfa
-    asdfasdf
-    </div>
-    </div>
+	<!--<img alt="" class="bg" src="images/placeholders/1920x1200-2.jpg" style="transform: translate3d(-739px, 155px, 0px) scale(1.32789, 1.32789); opacity: 1; transform-origin: left center 0px;"><img alt="" class="bg" src="images/placeholders/1920x1200-0.jpg" style="transform: translate3d(-739px, 155px, 0px) scale(1.27833, 1.27833); opacity: 0; transform-origin: left center 0px;">-->
+	<div class="content no-bottom-padding colors-e">
+		<div class="container">
+			<table class="table">
+			<thead>
+			<tr>
+				<th>
+					#
+				</th>
+				<th>
+					제목
+				</th>
+				<th>
+					작성자
+				</th>
+				<th>
+					작성 일자
+				</th>
+			</tr>
+			</thead>
+			<% @boards.each_with_index do |post,i| %>
+			<tbody>
+			<tr class="active">
+				<td>
+					<%=i+1 %>
+				</td>
+				<td>
+					<a href="/mentors/<%=post.id%>"><%=post.title %></a>
+				</td>
+				<td>
+					<%=post.writer %>
+				</td>
+				<td>
+					<%=post.created_at %>
+				</td>
+			</tr>
+			</tbody>
+			<%end%>
+			
+			</table>
+		</div>
+	</div>
+	<div class="col-md-2" style="margin-left:19px;">
+		<p class="text-center">
+			<button type="button" class="button background-b highlight-b" onclick="location.href='/mentors/new'">작성하기</button>
+		</p>
+	</div>
 </div>
-</div>
+</section>

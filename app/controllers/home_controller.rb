@@ -16,5 +16,8 @@ class HomeController < ApplicationController
   def update_post
     @post = Post.find(params[:id])
   end
+
   
+
+
 end

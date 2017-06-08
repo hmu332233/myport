@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 20170605113531) do
   create_table "comments", force: :cascade do |t|
     t.string   "replyname"
     t.text     "replycontent"
+    t.integer  "board_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end

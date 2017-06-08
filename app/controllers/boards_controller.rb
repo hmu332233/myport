@@ -28,8 +28,8 @@ class BoardsController < ApplicationController
     
     
     @post = Board.find(id)
-    @comments = Comment.all.reverse
-    @count = Comment.count(:all)
+    @comments = @post.comments.all.reverse
+    @count = @comments.count
 
   end
 
@@ -67,7 +67,7 @@ class BoardsController < ApplicationController
     _name = params[:replyname]
     _content = params[:replycontent]
     
-    Comment.create(replyname: _name, replycontent: _content)
+    Comment.create(replyname: _name, replycontent: _content,board_id: _id)
     
     redirect_to '/boards/' + _id
 

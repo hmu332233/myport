@@ -9,7 +9,7 @@
            <%= image_tag("#{post.pictures.first.url}", alt: "entity") %>
            <!--<img alt="Project 2" src="/images/placeholders/500x400-0.jpg"/>-->
         <% else %>
-            <%= image_tag("/images/blank.png" ,alt: "Project") %>
+            <%= image_tag("/images/placeholders/blank#{ post.id % 3 + 1}.jpg" ,alt: "Project") %>
         <!--<img alt="Project 2" src="/images/placeholders/new_post.png"/>-->
         <% end %>
    		<div class="overlay background-90-e">

@@ -15,6 +15,9 @@ Rails.application.routes.draw do
   get 'boards/:id/edit' => 'boards#edit'
   get 'boards/:id/update' => 'boards#update'
   get 'boards/:id/delete' => 'boards#delete'
+  
+  post 'boards/:id/comments' => 'boards#createComment'
+  delete 'boards/:board_id/comments/:comment_id' => 'boards#deleteComment'
 
 
   post '/blocks' => 'blocks#create'

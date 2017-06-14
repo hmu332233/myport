@@ -83,4 +83,28 @@ class BoardsController < ApplicationController
     
   end
   
+  
+  # comment
+
+  # POST boards/:id/comments
+  def createComment
+    _id = params[:id]
+    _name = current_user.name
+    _content = params[:replycontent]
+    
+    Comment.create(replyname: _name, replycontent: _content,board_id: _id)
+    
+    redirect_to '/boards/' + _id
+  end
+  
+  # DELETE boards/:board_id/comments/:comment_id
+  def deleteComment
+    board_id = params[:board_id]
+    comment_id = params[:comment_id]
+    
+    Comment.find(comment_id).delete
+    
+    redirect_to '/boards/' + _id
+  end
+  
 end

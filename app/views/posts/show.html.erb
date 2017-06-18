@@ -24,6 +24,9 @@
 							<div class="post-month">
 								<%= "#{@post.created_at.strftime('%B')} #{@post.created_at.year}" %>							
 							</div>
+							<form action="" method="get" id="postdelete">
+								<button type="button" class="close" onclick="window.location.href='http://www.google.com'" style="color:red;" >[게시물 삭제]</button>
+							</form>
 						</div>
 						<div class="col-md-9">
 							<div class="post-body background-75-e">

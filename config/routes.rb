@@ -55,6 +55,10 @@ Rails.application.routes.draw do
   put '/posts/:id' => 'posts#update'
   delete '/posts/:id' => 'posts#delete'
   
+  #posts_comments
+  post 'posts/:id/comments' => 'posts#processAddComment'
+  delete 'posts/:board_id/comments/:comment_id' => 'posts#processDeleteComment'
+  
   #search
   get '/posts/search/:word' => 'posts#search'
 

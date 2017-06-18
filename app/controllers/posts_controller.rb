@@ -159,4 +159,28 @@ class PostsController < ApplicationController
   def post_params
     return params.require(:post).permit(:title,:content,:scope)
   end
+  
+  
+  # posts_comment
+  
+  # POST posts/:id/comments
+  def processAddComment
+    _id = params[:id]
+    _name = current_user.name
+    _content = params[:replycontent]
+    
+    PostComment.create(user_name: _name, content: _content,post_id: _id)
+    
+    redirect_to '/posts/' + _id
+  end
+  
+  # DELETE posts/:post_id/comments/:comment_id
+  def processDeleteComment
+    post_id = params[:post_id]
+    comment_id = params[:comment_id]
+    
+    PostComment.find(comment_id).delete
+    
+    redirect_to '/posts/' + _id
+  end
 end

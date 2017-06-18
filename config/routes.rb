@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   delete 'mentees/:mentee_id' => 'mentors#delete_mentee'
   
   get 'boards/management'
+  
   get 'boards/index'
   get 'boards/new' 
   get 'boards/create' => 'boards#create'
@@ -16,9 +17,18 @@ Rails.application.routes.draw do
   get 'boards/:id/update' => 'boards#update'
   get 'boards/:id/delete' => 'boards#delete'
   
+  #boards
+  get '/boards' => 'boards#index'
+  get 'boards/:id' => 'boards#show'
+  get '/boards/new' 
+  get '/boards/:id/edit' => 'boards#edit'
+  post '/boards' => 'boards#create'
+  put '/boards/:id' => 'boards#update'
+  delete '/boards/:id' => 'boards#delete'
+  
+  #boards_comments
   post 'boards/:id/comments' => 'boards#createComment'
   delete 'boards/:board_id/comments/:comment_id' => 'boards#deleteComment'
-
 
   post '/blocks' => 'blocks#create'
   delete '/blocks' => 'blocks#delete' 

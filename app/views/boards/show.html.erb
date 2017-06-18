@@ -17,14 +17,15 @@
 								<p>
 									<%=@post.content%>
 								</p>
-								<% if @isMine %>
-								<div style="text-align:right;">
-									<p>
-										<a href="/boards/<%=@post.id%>/edit">수정하기</a><a href="/boards/<%=@post.id%>/delete">삭제하기</a><a href="/boards/index">목록으로</a>
-									</p>
-								</div>
-								<% end %>
-								<div id="comments">
+							</div>
+							<% if @isMine %>
+							<div style="text-align:right;">
+								<p>
+									<a href="/boards/<%=@post.id%>/edit">수정하기</a><a href="/boards/<%=@post.id%>/delete">삭제하기</a><a href="/boards/index">목록으로</a>
+								</p>
+							</div>
+							<% end %>
+							<div id="comments">
 									<h6>댓글 수 : <%=@count%>개</h6>
 									
 									<ol class="comment-list">
@@ -37,7 +38,7 @@
 												</div>
 												<div class="comment-text">
 													<p>
-														<%=post.replycontent%>
+														<%= simple_format(post.replycontent) %>
 													</p>
 												</div>
 											</div>
@@ -65,8 +66,7 @@
 											</div>
 										</div>
 									</form>
-								</div>
-							</div>
+								</div><!-- comment end -->
 						</div>
 					</div>
 				</div>

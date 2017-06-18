@@ -13,3 +13,8 @@
  *= require page/bootstrap-menteelist.css
  *= require page/bootstrap-mentor.css
  */
+
+
+.post-body {
+    min-height: 300px;
+}

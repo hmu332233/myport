@@ -57,7 +57,7 @@ Rails.application.routes.draw do
   
   #posts_comments
   post 'posts/:id/comments' => 'posts#processAddComment'
-  delete 'posts/:board_id/comments/:comment_id' => 'posts#processDeleteComment'
+  delete 'posts/:post_id/comments/:comment_id' => 'posts#processDeleteComment'
   
   #search
   get '/posts/search/:word' => 'posts#search'

@@ -39,8 +39,50 @@
 								    <%= simple_format(@post.content) %>
 								</p>
 							</div>
+							<div id="comments">
+							<h6>댓글 수 : <%=@count%>개</h6>
+							<ol class="comment-list">
+								<% @comments.each_with_index do |comment,i| %>
+								<li>
+								<div class="comment">
+									<div class="comment-box">
+										<div class="comment-author">
+											<a href="#"><%=comment.user_name%></a><%=comment.created_at %>
+										</div>
+										<div class="comment-text">
+											<p>
+												<%=comment.content%>
+											</p>
+										</div>
+									</div>
+								</div>
+								</li>
+								<%end%>
+							</ol>
+							<h4>Leave a Comment</h4>
+							<form class="comment-form" action="/posts/<%=@post.id%>/comments" method="post" novalidate="novalidate">
+								<div class="row">
+									<div class="col-md-12 control-group">
+										<input type="text" name="content" value="" size="40" placeholder="Message" data-validation-required-message="Please fill the required field." required>
+										<div class="help-block">
+										</div>
+									</div>
+									<!--<div class="col-md-12 control-group">-->
+									<!--	<textarea name="replycontent" placeholder="Message" data-validation-required-message="Please fill the required field." required></textarea>-->
+									<!--	<div class="help-block">-->
+									<!--	</div>-->
+									<!--</div>-->
+									<div class="col-md-12 form-actions">
+										<input class="button" type="submit" value="Post Comment">
+									</div>
+								</div>
+							</form>
+						</div>
 						</div>
 					</div>
+					<div class="row">
+						
+					</div><!--row end-->
 				</div>
 				<div class="col-md-3 sidebar page-transition">
 					<div class="title">

@@ -125,6 +125,10 @@ class PostsController < ApplicationController
       @scope = "멘토멘티 공개"
     end
     
+    #comment
+    @comments = @post.post_comments.all.reverse
+    @count = @comments.count
+    
   end
   
   def edit
@@ -167,7 +171,7 @@ class PostsController < ApplicationController
   def processAddComment
     _id = params[:id]
     _name = current_user.name
-    _content = params[:replycontent]
+    _content = params[:content]
     
     PostComment.create(user_name: _name, content: _content,post_id: _id)
     

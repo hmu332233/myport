@@ -43,21 +43,21 @@
 		</div>
 	</div>
 </div>
-<div class="page-border bottom colors-e background-solid">
-	<a href="#top" class="hover-effect">To <span class="highlight">Top</span></a>
-</div>
-<div class="page-border left colors-e background-solid">
-	<ul>
-		<li><a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook"></i></a></li>
-		<li><a href="https://twitter.com/" target="_blank"><i class="fa fa-twitter"></i></a></li>
-		<li><a href="http://www.youtube.com/" target="_blank"><i class="fa fa-youtube"></i></a></li>
-		<li><a href="https://vimeo.com/" target="_blank"><i class="fa fa-vimeo-square"></i></a></li>
-		<li><a href="http://www.skype.com/" target="_blank"><i class="fa fa-skype"></i></a></li>
-	</ul>
-</div>
+<!--<div class="page-border bottom colors-e background-solid">-->
+<!--	<a href="#top" class="hover-effect">To <span class="highlight">Top</span></a>-->
+<!--</div>-->
+<!--<div class="page-border left colors-e background-solid">-->
+<!--	<ul>-->
+<!--		<li><a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook"></i></a></li>-->
+<!--		<li><a href="https://twitter.com/" target="_blank"><i class="fa fa-twitter"></i></a></li>-->
+<!--		<li><a href="http://www.youtube.com/" target="_blank"><i class="fa fa-youtube"></i></a></li>-->
+<!--		<li><a href="https://vimeo.com/" target="_blank"><i class="fa fa-vimeo-square"></i></a></li>-->
+<!--		<li><a href="http://www.skype.com/" target="_blank"><i class="fa fa-skype"></i></a></li>-->
+<!--	</ul>-->
+<!--</div>-->
 <!-- BEGIN: Top menu -->
-<div class="page-border right colors-e background-solid">
-</div>
+<!--<div class="page-border right colors-e background-solid">-->
+<!--</div>-->
 <nav class="navbar navbar-default navbar-fixed-top page-transition colors-e background-solid" role="navigation" id="top-nav">
 <div class="container">
 	<div class="navbar-header">
@@ -66,9 +66,9 @@
 		<a class="navbar-brand" href="/user/<%= current_user.id %>">my<span class="highlight">PORT</span></a>
 	</div>
 	<div class="col-md-3 col-md-offset-3" style="margin-top: 12px">
-		<form action="after_search.html" method="get">
+		<form action="/search" method="get">
 			<div class="navbar-header" id="topsearchbar">
-				<input placeholder="Search HashTag #" name="txtSend" type="text" style="font-size:20px; height:30px;" autofocus>
+				<input placeholder="Search HashTag #" name="word" type="text" style="height:30px;" autofocus>
 			</div>
 		</form>
 	</div>
@@ -83,35 +83,35 @@
 </div>
 </nav>
 <!-- END: Top menu -->
-<ul id="dot-scroll" class="colors-e background-solid">
-</ul>
-<div class="overlay-window gallery-overlay colors-f background-95-f" data-overlay-zoom="#work .content">
-	<div class="overlay-control background-85-d">
-		<a class="previos" href="#"></a>
-		<a class="next" href="#"></a>
-		<a class="cross" href="#"></a>
-	</div>
-	<div class="overlay-view">
-	</div>
-	<ul class="loader">
-		<li class="background-100-d"></li>
-		<li class="background-100-d"></li>
-		<li class="background-100-d"></li>
-	</ul>
-</div>
-<div class="overlay-window map-overlay colors-f background-95-f">
-	<div class="overlay-control background-90-f">
-		<a class="cross" href="#"></a>
-	</div>
-	<div class="overlay-view">
-		<div class="map-canvas" data-latitude="42.487606" data-longitude="-71.115661" data-zoom="14">
-			<div class="map-marker" data-latitude="42.487606" data-longitude="-71.115661" data-text="Our awesome location">
-			</div>
-			<div class="map-marker" data-latitude="42.485100" data-longitude="-71.113256" data-text="Our sales office">
-			</div>
-		</div>
-	</div>
-</div>
+<!--<ul id="dot-scroll" class="colors-e background-solid">-->
+<!--</ul>-->
+<!--<div class="overlay-window gallery-overlay colors-f background-95-f" data-overlay-zoom="#work .content">-->
+<!--	<div class="overlay-control background-85-d">-->
+<!--		<a class="previos" href="#"></a>-->
+<!--		<a class="next" href="#"></a>-->
+<!--		<a class="cross" href="#"></a>-->
+<!--	</div>-->
+<!--	<div class="overlay-view">-->
+<!--	</div>-->
+<!--	<ul class="loader">-->
+<!--		<li class="background-100-d"></li>-->
+<!--		<li class="background-100-d"></li>-->
+<!--		<li class="background-100-d"></li>-->
+<!--	</ul>-->
+<!--</div>-->
+<!--<div class="overlay-window map-overlay colors-f background-95-f">-->
+<!--	<div class="overlay-control background-90-f">-->
+<!--		<a class="cross" href="#"></a>-->
+<!--	</div>-->
+<!--	<div class="overlay-view">-->
+<!--		<div class="map-canvas" data-latitude="42.487606" data-longitude="-71.115661" data-zoom="14">-->
+<!--			<div class="map-marker" data-latitude="42.487606" data-longitude="-71.115661" data-text="Our awesome location">-->
+<!--			</div>-->
+<!--			<div class="map-marker" data-latitude="42.485100" data-longitude="-71.113256" data-text="Our sales office">-->
+<!--			</div>-->
+<!--		</div>-->
+<!--	</div>-->
+<!--</div>-->
 <div class="overlay-window credits-overlay colors-g background-95-g">
 	<div class="overlay-control background-85-d">
 		<a class="cross" href="#"></a>

@@ -15,4 +15,4 @@
   - 포스트 작성
     ![1](/doc/img/new.JPG)
   - 상세화면
-    ![1](/doc/img/show.JPG)
+    ![1](/doc/img/show.jpg)
